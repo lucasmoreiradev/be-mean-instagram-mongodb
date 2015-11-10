@@ -110,9 +110,6 @@ Fetched 5 record(s) in 2ms
 
 ## Pikachu (passo 6)
 
-
-## Atualização do Pikachu (passo 6)
-
 ```
 MacBook-Pro-de-Lucas(mongod-3.0.7) be-mean-pokemons> var poke = db.pokemons.findOne({name: 'Metapod'})
 MacBook-Pro-de-Lucas(mongod-3.0.7) be-mean-pokemons> poke
@@ -124,6 +121,11 @@ MacBook-Pro-de-Lucas(mongod-3.0.7) be-mean-pokemons> poke
   "defense": 20,
   "height": 0.2
 }
+```
+
+## Atualização do Pikachu (passo 6)
+
+```
 MacBook-Pro-de-Lucas(mongod-3.0.7) be-mean-pokemons> poke.description
 É ainda um casulo, evolução do Caterpie
 MacBook-Pro-de-Lucas(mongod-3.0.7) be-mean-pokemons> poke.description = 'Ele é zica memo, tio!!!'
