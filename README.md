@@ -8,7 +8,7 @@ https://docs.google.com/presentation/d/1KXxmcwd47x4v2SymyiBPK7ucn80PruSvcw4mZ5S3
 
 #### Aula 01 (Export & Import)
 
-___Resumo copiado do [Vinicius Galvão](https://github.com/viniciusgalvao)___
+___Este resumo da aula 01 foi copiado do repositório do [Vinicius Galvão](https://github.com/viniciusgalvao/be-mean-instagram-mongodb)___
 
 Nessa aula foi falado um pouco sobre o curso [*"Construa seu Instagram com MEAN"*](http://dagora.net/be-mean/) e sua **EMENTA**.
 
