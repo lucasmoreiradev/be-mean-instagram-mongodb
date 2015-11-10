@@ -10,7 +10,6 @@ be-mean-pokemons  → 0.078GB
 be-mean           → 0.078GB
 local             → 0.078GB
 MacBook-Pro-de-Lucas(mongod-3.0.7) be-mean-pokemons> 
-
 ```
 
 ## Listagem das coleções (passo 3)
