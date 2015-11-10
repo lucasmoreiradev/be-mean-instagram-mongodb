@@ -27,3 +27,5 @@ Finalizando a aula foram apresentados os comandos `export & import` do __mongoDB
 - [Vídeo da Aula](https://www.youtube.com/watch?v=leYxsEAL_yY)
 - [Exercício Solicitado](https://github.com/Webschool-io/be-mean-instagram/blob/master/apostila/mongodb/export_import.md)
 - [Exercício Resolvido](https://github.com/Webschool-io/be-mean-instagram/blob/master/apostila/classes/mongodb/exercises/class-01-resolved-viniciusgalvao-vinicius-galvao.md)
+
+#### Aula 02 (???)
