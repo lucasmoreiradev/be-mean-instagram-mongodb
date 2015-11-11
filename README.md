@@ -8,7 +8,7 @@ https://docs.google.com/presentation/d/1KXxmcwd47x4v2SymyiBPK7ucn80PruSvcw4mZ5S3
 
 #### Aula 01 (Export & Import)
 
-___Este resumo da aula 01 foi copiado do repositório do [Vinicius Galvão](https://github.com/viniciusgalvao/be-mean-instagram-mongodb)___
+__Este resumo da aula 01 foi copiado do repositório do [Vinicius Galvão](https://github.com/viniciusgalvao/be-mean-instagram-mongodb)__
 
 Nessa aula foi falado um pouco sobre o curso [*"Construa seu Instagram com MEAN"*](http://dagora.net/be-mean/) e sua **EMENTA**.
 
@@ -28,4 +28,25 @@ Finalizando a aula foram apresentados os comandos `export & import` do __mongoDB
 - [Exercício Solicitado](https://github.com/Webschool-io/be-mean-instagram/blob/master/apostila/mongodb/export_import.md)
 - [Exercício Resolvido](https://github.com/Webschool-io/be-mean-instagram/blob/master/apostila/classes/mongodb/exercises/class-01-resolved-viniciusgalvao-vinicius-galvao.md)
 
-#### Aula 02 (???)
+#### Aula 02 (Databases e CRUD)
+
+Nesta aula foi ensinado a criar, listar e escolher databases na qual
+queremos trabalhar. Também foi mostrado como podemos criar collections e
+lista-las de acordo com a database escolhida. 
+
+Iniciamos os estudos CRUD e  vimos os seguintes métodos:
+```
+  db.pokemons.insert({json}); => __Faz apenas inserção__
+- db.pokemons.save({json}) => __Faz inserção ou atualização__
+- db.pokemons.find() => __Realiza consula__
+- db.pokemons.findOne() => __Realiza consulta de um objeto específico__
+```
+
+Ou seja, aprendemos **C(reate)R(ead)U(pdate)**, faltou o D(elete), que
+será continuado na próxima aula 03.
+
+#### Links da Aula
+- [Vídeo da aula](https://www.youtube.com/watch?v=PaNVk0V2UNI)
+- [Exercício Solicitado](https://github.com/Webschool-io/be-mean-instagram/blob/master/apostila/classes/mongodb/class-02-resolved.md)
+- [Exercício Resolvido](https://github.com/fauker/be-mean-instagram-mongodb/blob/master/exercises/class-02-resolved-fauker-lucas-moreira.md)
+
