@@ -8,7 +8,7 @@ https://docs.google.com/presentation/d/1KXxmcwd47x4v2SymyiBPK7ucn80PruSvcw4mZ5S3
 
 #### Aula 01 (Export & Import)
 
-__Este resumo da aula 01 foi copiado do repositório do [Vinicius Galvão](https://github.com/viniciusgalvao/be-mean-instagram-mongodb)__
+*Este resumo da aula 01 foi copiado do repositório do [Vinicius Galvão](https://github.com/viniciusgalvao/be-mean-instagram-mongodb)*
 
 Nessa aula foi falado um pouco sobre o curso [*"Construa seu Instagram com MEAN"*](http://dagora.net/be-mean/) e sua **EMENTA**.
 
@@ -34,7 +34,7 @@ Nesta aula foi ensinado a criar, listar e escolher databases na qual
 queremos trabalhar. Também foi mostrado como podemos criar collections e
 lista-las de acordo com a database escolhida. 
 
-Iniciamos os estudos CRUD e  vimos os seguintes métodos:
+Iniciamos os estudos CRUD. Sendo assim, vimos os seguintes métodos:
 ```
   db.pokemons.insert({json}); => __Faz apenas inserção__
 - db.pokemons.save({json}) => __Faz inserção ou atualização__
