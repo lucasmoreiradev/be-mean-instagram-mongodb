@@ -36,13 +36,13 @@ lista-las de acordo com a database escolhida.
 
 Iniciamos os estudos CRUD. Sendo assim, vimos os seguintes métodos:
 ```
-  db.pokemons.insert({json}); => __Faz apenas inserção__
+- db.pokemons.insert({json}) => __Faz apenas inserção__
 - db.pokemons.save({json}) => __Faz inserção ou atualização__
 - db.pokemons.find() => __Realiza consula__
 - db.pokemons.findOne() => __Realiza consulta de um objeto específico__
 ```
 
-Ou seja, aprendemos **C(reate)R(ead)U(pdate)**, faltou o D(elete), que
+Ou seja, aprendemos **C(reate)R(ead)U(pdate)**, faltou o **D(elete)**, que
 será continuado na próxima aula 03.
 
 #### Links da Aula
