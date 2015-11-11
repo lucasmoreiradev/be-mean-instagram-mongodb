@@ -52,3 +52,6 @@ será continuado na próxima aula 03.
 - [Exercício Solicitado](https://github.com/Webschool-io/be-mean-instagram/blob/master/apostila/classes/mongodb/class-02-resolved.md)
 - [Exercício Resolvido](https://github.com/fauker/be-mean-instagram-mongodb/blob/master/exercises/class-02-resolved-fauker-lucas-moreira.md)
 
+================================================
+
+#### Aula 03 (???)
