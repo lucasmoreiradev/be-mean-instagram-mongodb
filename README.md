@@ -44,7 +44,7 @@ Iniciamos os estudos CRUD. Sendo assim, vimos os seguintes métodos:
 - db.pokemons.findOne() => (Realiza consulta de um objeto específico)
 ```
 
-Ou seja, aprendemos **C(reate)R(ead)U(pdate)**. Faltou o **D(elete)**, que
+Ou seja, aprendemos **C(reate)R(etrieve)U(pdate)**. Faltou o **D(elete)**, que
 será ensinado na aula 03.
 
 #### Links da Aula
