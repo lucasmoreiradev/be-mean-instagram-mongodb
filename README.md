@@ -32,7 +32,7 @@ Finalizando a aula foram apresentados os comandos `export & import` do __mongoDB
 
 #### Aula 02 (Databases e CRUD)
 
-Nesta aula foi ensinado a criar, listar e escolher databases na qual
+Nessa aula foi ensinado a criar, listar e escolher databases na qual
 queremos trabalhar. Também foi mostrado como podemos criar collections e
 lista-las de acordo com a database escolhida. 
 
