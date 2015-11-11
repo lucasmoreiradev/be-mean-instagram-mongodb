@@ -45,7 +45,7 @@ Iniciamos os estudos CRUD. Sendo assim, vimos os seguintes métodos:
 ```
 
 Ou seja, aprendemos **C(reate)R(ead)U(pdate)**, faltou o **D(elete)**, que
-será continuado na próxima aula 03.
+será ensinado na aula 03.
 
 #### Links da Aula
 - [Vídeo da aula](https://www.youtube.com/watch?v=PaNVk0V2UNI)
