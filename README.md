@@ -66,7 +66,7 @@ uma analogia com o banco de dados relacional, seria a cláusula
 **WHERE**. 
 
 **Fields**: São os campos que nós queremos buscar. Fazendo a mesma
-analogia com o banco de dados relacional, os Fields equivale-se ao
+analogia com o banco de dados relacional, os Fields são equivalentes  ao
 **SELECT**. Para isso, deve-se especificar esses campos com 0
 (**FALSE**) ou 1 (**TRUE**), da seguinte forma:
 
@@ -87,7 +87,7 @@ Operador | Significado | Equivalência | Forma de uso
 $lt | less than (menor que) | < | ```var query = {height: {$lt: 0.5}}``` 
 $lte | less than or equal (menor ou igual que) | <= | ```var query = {height: {$lte: 0.5}}```
 $gt | greater than (maior que) | > | ```var query = {height: {$gt: 0.5}}``` 
-$gte | greater than or equal (maior ou igual que) | >= | `` var query = {height: {$gte: 0.5}}```
+$gte | greater than or equal (maior ou igual que) | >= | ```var query = {height: {$gte: 0.5}}```
 
 Também vimos os **Operadores Lógicos**. Ficam da seguinte forma:
 
@@ -97,8 +97,7 @@ $or | OU | ```var query = {$or: [{a: 1}, {b: 2}]}```
 $nor | Not OU | ```var query = {$nor: [{a: 1}, {b: 2}]}```
 $and | E | ```var query = {$and: [{a: 1}, {b: 5}]}```
 
-Também vimos no final, mas não menos importante, os **Operadores
-Existenciais**:
+E por fim, vamos os **Operadores Existenciais**:
 
 Operador | Significado | Forma de Uso
 -------- | ----------- | ------------
