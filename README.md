@@ -97,7 +97,7 @@ $or | OU | ```var query = {$or: [{a: 1}, {b: 2}]}```
 $nor | Not OU | ```var query = {$nor: [{a: 1}, {b: 2}]}```
 $and | E | ```var query = {$and: [{a: 1}, {b: 5}]}```
 
-E por fim, vamos os **Operadores Existenciais**:
+E por fim, vimos os **Operadores Existenciais**:
 
 Operador | Significado | Forma de Uso
 -------- | ----------- | ------------
