@@ -66,11 +66,11 @@ db.pokemons.find(query)
 Fetched 1 record(s) in 2ms
 ```
 
-## Liste todos Pokemons com o name `Pikachu` **OU** com attack **menor ou igual que** 0.5**
+## Liste todos Pokemons com o name `Pikachu` **OU** com attack **menor ou igual que** 0.5
 
 ```
-MacBook-Pro-de-Lucas(mongod-3.0.7) be-mean-instagram> var query = {$and:
-[{name: 'Pikachu'}, {height: {$lte: 0.5}}]}
+MacBook-Pro-de-Lucas(mongod-3.0.7) be-mean-instagram> var query = {$or:
+[{name: 'Pikachu'}, {attack: {$lte: 0.5}}]}
 MacBook-Pro-de-Lucas(mongod-3.0.7) be-mean-instagram>
 db.pokemons.find(query)
 {
@@ -81,8 +81,7 @@ db.pokemons.find(query)
   "attack": 55,
   "height": 0.4
 }
-Fetched 1 record(s) in 1ms
-MacBook-Pro-de-Lucas(mongod-3.0.7) be-mean-instagram> 
+Fetched 1 record(s) in 26ms
 ```
 
 ## Liste todos Pokemons com o attack **MAIOR OU IGUAL QUE** 48 **E** com height **menor ou igual que** 0.5
