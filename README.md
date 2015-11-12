@@ -36,16 +36,13 @@ Nessa aula foi ensinado a criar, listar e escolher databases na qual
 queremos trabalhar. Também foi mostrado como podemos criar collections e
 lista-las de acordo com a database escolhida. 
 
-Iniciamos os estudos CRUD. Sendo assim, vimos os seguintes métodos:
+Iniciamos os estudos CRUD. Sendo assim, vimos as seguintes funções:
 ```
 - db.pokemons.insert({json}) => (Faz apenas inserção)
 - db.pokemons.save({json}) => (Faz inserção ou atualização)
 - db.pokemons.find() => (Realiza consulta)
 - db.pokemons.findOne() => (Realiza consulta de um objeto específico)
 ```
-
-Ou seja, aprendemos **C(reate)R(etrieve)U(pdate)**. Faltou o **D(elete)**, que
-será ensinado na aula 03.
 
 #### Links da Aula
 - [Vídeo da aula](https://www.youtube.com/watch?v=PaNVk0V2UNI)
@@ -54,4 +51,7 @@ será ensinado na aula 03.
 
 ================================================
 
-#### Aula 03 (???)
+#### Aula 03 (Busca com Operadores)
+
+A aula foi iniciada com uma breve explicação sobre como o **_id** das
+coleções é gerado. 
