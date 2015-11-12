@@ -2,7 +2,7 @@
 
 autor: Lucas Moreira
 
-## Liste todos Pokemons com a altura **menor que** 0.5;
+## Liste todos Pokemons com a altura **menor que** 0.5
 
 ```
 MacBook-Pro-de-Lucas(mongod-3.0.7) be-mean-instagram> var query =
