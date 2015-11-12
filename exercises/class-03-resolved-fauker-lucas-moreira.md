@@ -48,8 +48,7 @@ Fetched 2 record(s) in 1ms
 MacBook-Pro-de-Lucas(mongod-3.0.7) be-mean-instagram> 
 ```
 
-## Liste todos Pokemons com a altura **menor ou igual que** 0.5 **E** do
-tipo grama
+## Liste todos Pokemons com a altura **menor ou igual que** 0.5 **E** do tipo grama
 
 ```
 MacBook-Pro-de-Lucas(mongod-3.0.7) be-mean-instagram> var query = {$and:
@@ -67,8 +66,7 @@ db.pokemons.find(query)
 Fetched 1 record(s) in 2ms
 ```
 
-## Liste todos Pokemons com o name `Pikachu` **OU** com attack **menor
-ou igual que** 0.5**
+## Liste todos Pokemons com o name `Pikachu` **OU** com attack **menor ou igual que** 0.5**
 
 ```
 MacBook-Pro-de-Lucas(mongod-3.0.7) be-mean-instagram> var query = {$and:
@@ -87,8 +85,7 @@ Fetched 1 record(s) in 1ms
 MacBook-Pro-de-Lucas(mongod-3.0.7) be-mean-instagram> 
 ```
 
-## Liste todos Pokemons com o attack **MAIOR OU IGUAL QUE** 48 **E** com
-height **menor ou igual que** 0.5
+## Liste todos Pokemons com o attack **MAIOR OU IGUAL QUE** 48 **E** com height **menor ou igual que** 0.5
 
 ```
 MacBook-Pro-de-Lucas(mongod-3.0.7) be-mean-instagram> var query = {$and:
