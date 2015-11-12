@@ -76,7 +76,17 @@ var fields = {name: 1, description: 1}
 db.pokemons.find(query, fields)
 ```
 
-O resultado dessa consulta será um documento com **_id**, **name** e
+Resultado:
+
+```
+{
+  "_id": ObjectId("5642723a76cb4bb0ef93cbb8"),
+  "name": "Pikachu",
+  "description": "Rato elétrico bem fofinho"
+}
+```
+
+O resultado possui um documento com **_id**, **name** e
 **description**. Mas, ***_id***???? Sim! Ele sempre virá nas consultas,
 a não ser que ele seja **negado**! ```var fields = {_id: 0}```
 
