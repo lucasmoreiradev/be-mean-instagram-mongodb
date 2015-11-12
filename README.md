@@ -66,7 +66,7 @@ uma analogia com o banco de dados relacional, seria a cláusula
 **WHERE**. 
 
 **Fields**: São os campos que nós queremos buscar. Fazendo a mesma
-analogia com o banco de dados relacional, os Fields se equivalem ao
+analogia com o banco de dados relacional, os Fields equivale-se ao
 **SELECT**. Para isso, deve-se especificar esses campos com 0
 (**FALSE**) ou 1 (**TRUE**), da seguinte forma:
 
