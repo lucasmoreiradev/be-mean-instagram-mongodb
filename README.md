@@ -54,4 +54,57 @@ Iniciamos os estudos CRUD. Sendo assim, vimos as seguintes funções:
 #### Aula 03 (Busca com Operadores)
 
 A aula foi iniciada com uma breve explicação sobre como o **_id** das
-coleções é gerado. 
+coleções é gerado. Também vimos um pouco sobre a sintaxe da função **find()**,
+que é:
+
+```
+db.collection.find({query}, {fields})
+```
+
+**Query**: É um JSON ```var query = {name: 'Pikachu'}``` que, fazendo
+uma analogia com o banco de dados relacional, seria a cláusula
+**WHERE**. 
+
+**Fields**: São os campos que nós queremos buscar. Fazendo a mesma
+analogia com o banco de dados relacional, os Fields se equivalem ao
+**SELECT**. Para isso, deve-se especificar esses campos com 0
+(**FALSE**) ou 1 (**TRUE**), da seguinte forma:
+
+```
+var query = {name: 'Pikachu'}
+var fields = {name: 1, description: 1}
+db.pokemons.find(query, fields)
+```
+
+O resultado dessa consulta será um documento com apenas o **_id**, que
+sempre virá nas consultas, a não ser que a gente o **negue** com o
+**false** ```var fields = {_id: 0}```, **nome** e **description**.
+
+Vimos também os **Operadores Aritméticos**. São eles:
+
+Operador | Significado | Equivalência | Forma de uso
+-------- | ----------- | ------------ | -----------
+$lt | less than (menor que) | < | ```var query = {height: {$lt: 0.5}}``` 
+$lte | less than or equal (menor ou igual que) | <= | ```var query = {height: {$lte: 0.5}}```
+$gt | greater than (maior que) | > | ```var query = {height: {$gt: 0.5}}``` 
+$gte | greater than or equal (maior ou igual que) | >= | `` var query = {height: {$gte: 0.5}}```
+
+Também vimos os **Operadores Lógicos**. Ficam da seguinte forma:
+
+Operador | Significado | Forma de Uso
+-------- | ----------- | ------------
+$or | OU | ```var query = {$or: [{a: 1}, {b: 2}]}```
+$nor | Not OU | ```var query = {$nor: [{a: 1}, {b: 2}]}```
+$and | E | ```var query = {$and: [{a: 1}, {b: 5}]}```
+
+Também vimos no final, mas não menos importante, os **Operadores
+Existenciais**:
+
+Operador | Significado | Forma de Uso
+-------- | ----------- | ------------
+$exists | Existe | ```var query = {campo: {$exists: true}}``` 
+
+#### Links da Aula
+- [Vídeo da aula](https://www.youtube.com/watch?v=cIHjA1hyPPY)
+- [Exercício Solicitado](https://github.com/Webschool-io/be-mean-instagram/blob/master/apostila/classes/mongodb/class-03-resolved.md)
+- [Exercício Resolvido](https://github.com/fauker/be-mean-instagram-mongodb/blob/master/exercises/class-03-resolved-fauker-lucas-moreira.md)
