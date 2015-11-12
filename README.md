@@ -51,7 +51,7 @@ Iniciamos os estudos CRUD. Sendo assim, vimos as seguintes funções:
 
 ================================================
 
-#### Aula 03 (Busca com Operadores)
+### Aula 03 (Busca com Operadores)
 
 A aula foi iniciada com uma breve explicação sobre como o **_id** das
 coleções é gerado. Também vimos um pouco sobre a sintaxe da função **find()**,
@@ -113,7 +113,11 @@ Operador | Significado | Forma de Uso
 -------- | ----------- | ------------
 $exists | Existe | ```var query = {campo: {$exists: true}}``` 
 
-#### Links da Aula
+##### Links da Aula
 - [Vídeo da aula](https://www.youtube.com/watch?v=cIHjA1hyPPY)
 - [Exercício Solicitado](https://github.com/Webschool-io/be-mean-instagram/blob/master/apostila/classes/mongodb/class-03-resolved.md)
 - [Exercício Resolvido](https://github.com/fauker/be-mean-instagram-mongodb/blob/master/exercises/class-03-resolved-fauker-lucas-moreira.md)
+
+================================================
+
+### Aula 04 (????)
