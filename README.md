@@ -76,9 +76,9 @@ var fields = {name: 1, description: 1}
 db.pokemons.find(query, fields)
 ```
 
-O resultado dessa consulta será um documento com apenas o **_id**, que
-sempre virá nas consultas, a não ser que a gente o **negue** com o
-**false** ```var fields = {_id: 0}```, **nome** e **description**.
+O resultado dessa consulta será um documento com **_id**, **name** e
+**description**. Mas, ***_id***???? Sim! Ele sempre virá nas consultas,
+a não ser que ele seja **negado**! ```var fields = {_id: 0}```
 
 Vimos também os **Operadores Aritméticos**. São eles:
 
