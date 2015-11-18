@@ -178,9 +178,9 @@ o campo não exista, ele irá criar o campo e setar o valor.
 Sintaxe: `{$inc: {campo: valor}}`
 
 Para incrementar: `db.pokemons.update({name: 'Pikachu'}, {$inc:
-{attack: 10})`
+{attack: 10}})`
 
-Para decrementar: `db.pokemons.update({name: 'Pikachu'}, {attack: -10})`
+Para decrementar: `db.pokemons.update({name: 'Pikachu'}, {$inc: {attack: -10}})`
 
 ##### Operadores de Array
 
