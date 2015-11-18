@@ -130,11 +130,11 @@ documento. São elas:
 - save
 - update
 
-Ambos podem fazer atualização no documento, porém, com o **save** precisamos
+Ambos podem fazer atualizações no documento, porém, com o **save** precisamos
 recuperar o documento para depois efetuar as alterações. Com o
 **update** isso não é necessário. Podemos alterar diretamente.
 
-A função **update recebe 3 parâmetros: 
+A função **update** recebe 3 parâmetros: 
 
 - query
 - modificação
@@ -147,17 +147,17 @@ db.collection.update(query, modifications, options);
 ```
 
 ***Atenção: não passar as modifications diretamente em uma variável para
-a função **update**, pois ele pode sumir com os outros campos do
-documento. Para efetuar um **update** da forma correta, existem os
-operadores de modificação***. São eles:
+a função update, pois ele pode sumir com os outros campos do
+documento. Para efetuar um update da forma correta, existem os
+operadores de modificação***. 
 
-`$set`, `$unset` e `$inc`.
+#### Operadores de modificação
 
 **$set**: modifica ou cria um valor, caso ele não exista. Sintaxe:
 `{$set: {campo: valor}}`. Exemplo: 
 
 ```
-db.pokemons.update({name: 'Pikachu'}, {$set: {attack: 120}});
+db.pokemons.update({name: 'Pikachu'}, {$set: {attack: 120}})
 ```
 
 Caso o campo `attack` já exista no documento, este campo será
@@ -173,14 +173,14 @@ db.pokemons.update({name: 'Pikachu'}, {$unset: {height: 1}})
 **$inc**: incrementa um valor no campo com a quantidade informada. Caso
 o campo não exista, ele irá criar o campo e setar o valor.
 
-***Para DECREMENTAR, basta passar o valor NEGATIVO***.
+***Obs: Para DECREMENTAR, basta passar o valor NEGATIVO***.
 
 Sintaxe: `{$inc: {campo: valor}}`
 
 Para incrementar: `db.pokemons.update({name: 'Pikachu'}, {$inc:
-{attack: 10});`
+{attack: 10})`
 
-Para decrementar: `db.pokemons.update({name: 'Pikachu'}, {attack: -10});`
+Para decrementar: `db.pokemons.update({name: 'Pikachu'}, {attack: -10})`
 
 ##### Operadores de Array
 
