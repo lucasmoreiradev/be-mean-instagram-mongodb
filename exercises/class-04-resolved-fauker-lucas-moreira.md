@@ -311,24 +311,76 @@ Fetched 3 record(s) in 8ms
 ## Pesquisar **todos** os pokemons que não são do tipo `elétrico`.##
 
 ```
-var query = {type: /eletric/i}
+var query = {type: {$ne: 'eletric'}}
 db.pokemons.find(query)
 {
-  "_id": ObjectId("5642723a76cb4bb0ef93cbb8"),
-  "name": "Pikachu",
-  "description": "Rato elétrico bem fofinho",
-  "type": "eletric",
-  "attack": 55,
+  "_id": ObjectId("5642727676cb4bb0ef93cbb9"),
+  "name": "Bulbassauro",
+  "description": "Chicote de trepadeira",
+  "type": "grama",
+  "attack": 49,
   "height": 0.4,
+  "active": false,
+  "moves": [
+    "desvio"
+  ]
+}
+{
+  "_id": ObjectId("5642744276cb4bb0ef93cbbc"),
+  "name": "Caterpie",
+  "description": "Larva lutadora",
+  "type": "inseto",
+  "attack": 30,
+  "heigth": 0.3,
+  "defense": 35,
+  "active": false,
+  "moves": [
+    "desvio"
+  ]
+}
+{
+  "_id": ObjectId("5649f8d3df5657464de14870"),
+  "description": "Pokemon de teste",
+  "name": "Testemon",
+  "attack": 8000,
+  "defense": 8000,
+  "active": false,
+  "moves": [
+    "desvio"
+  ]
+}
+{
+  "_id": ObjectId("564c80645726fe40b91cc241"),
+  "artive": true,
+  "active": false,
+  "moves": [
+    "desvio"
+  ]
+}
+{
+  "_id": ObjectId("564272c076cb4bb0ef93cbba"),
+  "name": "Charmander",
+  "description": "Esse é o cão chupando manga de fofinho",
+  "type": "fogo",
+  "attack": 52,
+  "height": 0.5,
   "active": false,
   "moves": [
     "Voadora cabulosa",
     "Golpe maroto",
-    "desvio",
-    "investida"
+    "desvio"
   ]
 }
-Fetched 1 record(s) in 5ms
+{
+  "_id": ObjectId("564ca7035726fe40b91cc243"),
+  "active": true,
+  "name": "AindaNaoExisteMon",
+  "attack": null,
+  "defense": null,
+  "height": null,
+  "description": "Sem maiores informações"
+}
+Fetched 6 record(s) in 8ms
 ```
 
 ## Pesquisar **todos** os pokemons que tenham o ataque `investida` **E** tenham a defesa **não menor ou igual** a 49.##
