@@ -215,6 +215,9 @@ ignorado.
 
 Sintaxe: `{$pullAll: {campo: [valores]}}`
 
+Obs: em todos os casos dos **Operadores de Array** se o campo existir e
+não for um array, irá retornar um erro.
+
 ##### Links da Aula
 - [Vídeo da aula](https://www.youtube.com/watch?v=ONzJsNbv15U)
 
