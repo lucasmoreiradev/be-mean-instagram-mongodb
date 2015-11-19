@@ -363,7 +363,7 @@ mongoimport --host 127.0.0.1 --db -nome-database --collections
 nome-colecao --drop --file entrada.json
 ```
 
-###### limit
+#### limit
 
 Serve para limitarmos a quantidade de coleções que teremos como resultado em uma busca. Por exemplo:
 
