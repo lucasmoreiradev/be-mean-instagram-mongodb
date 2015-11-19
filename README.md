@@ -322,3 +322,42 @@ apagar a coleção, deve-se utilizar a função **drop()**.
 
 ================================================
 
+#### Aula 05 ()
+
+Iniciou a aula falando um pouco sobre o count, que ele é mais rápido que
+o find().lenght, que ele aceita querys dentro dele count({}) etc.
+
+o distinct tem a mesma ideia do distinct do SQL: não trazer dados
+repetidos. db.resturantes.distinct('borough'), e ele retorna um array
+diretamente; posso pegar diretamente o array e colocar em ordem
+alfabetica dando um db.restaurantes.distinct('borough').sort(), se eu
+quiser inverter a ordem de Z-A, basta colocar um reverse() depois do
+sort
+
+para exportar uma collection: mongoexport --host 127.0.0.1 --db
+-be-mean-instagram --collection pokemons --out pokemons.json
+
+para importar: mongoimport --host 127.0.0.1 --db be-mean --collections
+pokemons --drop --file pokemons.json
+
+É bom sempre dar um findOne() para conhecer o objeto e a estrutura da
+database.
+
+LIMIT E SKIP:
+
+limit - find(query, campos).limit(quantidadeDeDadosQueEuPedir)
+
+skip - pula registros, é resultado de uma multiplicacao. Por exemplo: se
+eu quiser paginar de 10 em 10, farei o seguinte:
+
+db.pokemons.find({}, {name: 1, _id: 0}.limit(10).skip(10 * 0)
+
+Agora vamos ver GROUP: agrupa alguma coisa. 
+
+Agregate:
+
+caso não esteja usando o mongohack, para identar os resultados do mongo,
+basta chamar a função pretty() no final
+
+
+Basicamente tudo o que eu faco com o group, eu faco com o agregate. 
