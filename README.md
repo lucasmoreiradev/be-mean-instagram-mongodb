@@ -221,4 +221,104 @@ não for um array, irá retornar um erro.
 ##### Links da Aula
 - [Vídeo da aula](https://www.youtube.com/watch?v=ONzJsNbv15U)
 
-#### Parte 2 
+#### Parte 2
+
+O Suissa disse que a [documentação do
+MongoDB](https://docs.mongodb.org/manual) é muito simples e bem
+explicada.
+
+Na parte 01 dessa aula 04 vimos que a sintaxe da função **update** é:
+`db.collection.update(query, modifications, options)`. Bom, na primeira
+parte da aula, trabalhamos bem utilizando somente os dois primeiros
+parâmetros. Já na segunda parte da aula, vimos o objeto **options**, que
+serve para configurarmos alguns valores diferentes do padrão para o
+**update**.
+
+Sintaxe: 
+
+```
+{
+  upsert:boolean,
+  multi: boolean,
+  writeConcern: document
+}
+```
+
+##### upsert
+
+Serve para caso o documento não seja encontrado pela **query**, ele
+insira o objeto que está sendo passado como modificação.
+
+Defaul: **FALSE**.
+
+##### setOnInsert
+
+Com esse operador podemos definir valores que serão adicionados apenas
+se ocorrer um **upsert**, ou seja, se o objeto for inserido quando não
+for achado pela **query**. Exemplo:
+
+```
+var query = {name: /NaoExisteMon/i}
+var mod = {
+  $setOnInsert: {
+    name: 'NaoExisteMon',
+    attack: null,
+    defense: null,
+    height: null,
+    description: 'Sem maiores informações'
+  }
+}
+var options = {upsert: true}
+db.pokemons.update(query, mod, options)
+```
+
+##### multi
+
+Se não 'setarmos' o operador **multi** como ***TRUE***, não podemos dar
+um update em mais de um documento. Exemplo de sintaxe:
+
+```
+var query = {}
+var mod = {$set: {active: false}}
+var options = {multi: true}
+db.pokemons.update(query, mod, options)
+```
+
+Esse update será feito em TODOS os documentos, porque o operador
+**MULTI** está como verdadeiro.
+
+Voltamos às buscas. Função find. Precisamos saber alguns operadores de
+array para buscamos documentos mais precisamente. 
+
+##### função find() - operadores de array
+
+**$in**: O operador **$in** retorna os documentos que possuem algum dos
+valores passados no array. Sintaxe: `{campo: {$in: [Array]}`.
+
+**$nin**: O contrário do **$in**, mesma sintaxe.
+
+**$all**: Retorna documentos que possuem todos os valores informados no
+array. Mesma sintaxe dos operadores anteriores.
+
+###### Operadore de Negação
+
+**$ne**: not Equal. Não funciona com regex. Sintaxe: `{campo: {$ne:
+valor}}`.
+
+**$not**: (Operador Lógico de Negação) funciona com regex ou com
+documentos. Sintaxe: `{campo: {$not: valor}}`.
+
+##### remove
+
+Para apagar dados de uma coleção, usaremos o **remove**.
+
+Obs: ele apenas apaga os dados, porém a coleção continua existindo. Para
+apagar a coleção, deve-se utilizar a função **drop()**.
+
+##### Links da Aula
+- [Vídeo da aula](https://www.youtube.com/watch?v=ozbmQb6SVQk)
+- [Exercício Solicitado](https://github.com/Webschool-io/be-mean-instagram/blob/master/apostila/classes/mongodb/class-04-resolved.md)
+- [Exercício Resolvido](https://github.com/fauker/be-mean-instagram-mongodb/blob/master/exercises/class-04-resolved-fauker-lucas-moreira.md)
+
+================================================
+
