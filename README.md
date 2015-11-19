@@ -120,7 +120,7 @@ $exists | Existe | ```var query = {campo: {$exists: true}}```
 
 ================================================
 
-### Aula 04 (Função updade)
+#### Aula 04 (Função updade)
 
 #### Parte 1 
 
