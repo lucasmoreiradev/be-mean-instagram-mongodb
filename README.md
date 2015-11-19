@@ -322,42 +322,81 @@ apagar a coleção, deve-se utilizar a função **drop()**.
 
 ================================================
 
-#### Aula 05 ()
+#### Aula 05 
 
-Iniciou a aula falando um pouco sobre o count, que ele é mais rápido que
-o find().lenght, que ele aceita querys dentro dele count({}) etc.
+Dicas: 
 
-o distinct tem a mesma ideia do distinct do SQL: não trazer dados
-repetidos. db.resturantes.distinct('borough'), e ele retorna um array
-diretamente; posso pegar diretamente o array e colocar em ordem
-alfabetica dando um db.restaurantes.distinct('borough').sort(), se eu
-quiser inverter a ordem de Z-A, basta colocar um reverse() depois do
-sort
-
-para exportar uma collection: mongoexport --host 127.0.0.1 --db
--be-mean-instagram --collection pokemons --out pokemons.json
-
-para importar: mongoimport --host 127.0.0.1 --db be-mean --collections
-pokemons --drop --file pokemons.json
-
-É bom sempre dar um findOne() para conhecer o objeto e a estrutura da
+- É bom sempre dar um findOne() para conhecer o objeto e a estrutura da
 database.
 
-LIMIT E SKIP:
+- Caso não esteja utilizando o mongohack, para identar os resultados do mongo basta chamar a função **pretty()**.
 
-limit - find(query, campos).limit(quantidadeDeDadosQueEuPedir)
+##### count
 
-skip - pula registros, é resultado de uma multiplicacao. Por exemplo: se
-eu quiser paginar de 10 em 10, farei o seguinte:
+A aula foi inicada mostrando um pouco sobre a função **count()**, vimos que a performance de utilizá-lo ao invés de utilizar o **find().lenght** para contar os registros é imensamente maior. A função **count()** também aceita querys por parâmetro. `count({})`.
 
+##### distinct
+
+A função **distinct()** tem a mesma ideia do **distinct** do SQL: não trazer dados
+repetidos. 
+
+Sintaxe: `db.resturantes.distinct('borough')`.
+
+Ele retorna um array; podemos pegar diretamente esse array e coloca-lo em ordem
+alfabética dando um `db.restaurantes.distinct('borough').sort()`. Caso seja necessário inverter a ordem de A-Z para Z-A, basta colocar um **reverse()** depois do **sort()**.
+
+##### importação / exportação
+
+Relembramos como importare e exportar coleções para o MondoDB.
+
+para exportar uma collection: 
+
+```
+mongoexport --host 127.0.0.1 --db
+-nome-database --collection nome-collection --out saida.json
+```
+
+para importar uma coleção:
+
+```
+mongoimport --host 127.0.0.1 --db -nome-database --collections
+nome-colecao --drop --file entrada.json
+```
+
+###### limit
+
+Serve para limitarmos a quantidade de coleções que teremos como resultado em uma busca. Por exemplo:
+
+`limit - find(query, campos).limit(quantidadeDeDadosQueEuPedir)`
+
+
+##### skip
+
+Serve para pula registros. É resultado de uma multiplicacao. Por exemplo: se
+precisarmos paginar de 10 em 10, teremos de fazer o seguinte:
+
+```
 db.pokemons.find({}, {name: 1, _id: 0}.limit(10).skip(10 * 0)
 
-Agora vamos ver GROUP: agrupa alguma coisa. 
+0, no caso, é a página. (primeira página)
+```
 
-Agregate:
+##### group
 
-caso não esteja usando o mongohack, para identar os resultados do mongo,
-basta chamar a função pretty() no final
+Simplesmente agrupa alguma coisa.
+
+`//TODO exemplo`
+
+##### agregate
+
+Agrupa documentos também. Basicamente tudo o que fazemos com o **group()**, podemos fazer com o **agregate()**.
+
+`//TODO exemplo`
 
 
-Basicamente tudo o que eu faco com o group, eu faco com o agregate. 
+##### Links da Aula
+- [Vídeo da aula](https://www.youtube.com/watch?v=1eHc8reT_Vk)
+- Exercício Solicitado (ainda não achei o link)
+- [Exercício Resolvido](https://github.com/fauker/be-mean-instagram-mongodb/blob/master/exercises/class-05-resolved-fauker-lucas-moreira.md)
+
+================================================
