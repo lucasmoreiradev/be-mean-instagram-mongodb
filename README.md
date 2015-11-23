@@ -322,7 +322,7 @@ apagar a coleção, deve-se utilizar a função **drop()**.
 
 ================================================
 
-#### Aula 05 
+c Aula 05 
 
 Dicas: 
 
@@ -400,3 +400,14 @@ Agrupa documentos também. Basicamente tudo o que fazemos com o **group()**, pod
 - [Exercício Resolvido](https://github.com/fauker/be-mean-instagram-mongodb/blob/master/exercises/class-05-resolved-fauker-lucas-moreira.md)
 
 ================================================
+
+#### Aula 06 - Parte 01 (Relacionamentos)
+
+No MongoDB não existem JOINS. Para fazer o relecionamento entre coleções, basta salvar o ***_id*** de uma coleção em outra.
+
+##### Links da Aula
+- [Vídeo da aula](https://www.youtube.com/watch?v=5bbWeEEzRQM&feature=share)
+
+#### Aula 06 - Parte 02 (???)
+
+
