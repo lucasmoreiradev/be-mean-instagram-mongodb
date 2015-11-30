@@ -291,7 +291,7 @@ db.pokemons.find({ $and: [{name: 'Charmander'}, {defense: 43}] }).explain("execu
   "ok": 1
 }
 
-**Com índice**:
+Com índice:
 
 db.pokemons.createIndex({ name: 1, defense: 1 })
 
