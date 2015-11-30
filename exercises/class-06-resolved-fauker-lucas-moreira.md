@@ -3,7 +3,7 @@
 Autor: **Lucas Moreira**
 
 
-## Criar um índice para o campo name e um índice conjunto para qualquer outros campos
+## Criar um índice para o campo name e um índice conjunto para quaisquer outros campos
 
 ```
 db.pokemons.createIndex({ name: 1 })
@@ -43,10 +43,10 @@ db.system.indexes.find()
 
 ```
 
-##3. Rodar uma query sem índice para o campo nome e uma com índice para o campo nome
+## Rodar uma query sem índice para o campo nome e uma com índice para o campo nome
 
 ```
-**Sem índice**:
+Sem índice:
 
 db.pokemons.find({ name: 'Charmander' }).explain("executionStats")
 {
@@ -106,7 +106,7 @@ db.pokemons.find({ name: 'Charmander' }).explain("executionStats")
   "ok": 1
 }
 
-**Com índice:
+Com índice:
 
 db.pokemons.createIndex({ name: 1})
 
@@ -201,10 +201,10 @@ db.pokemons.find({ name: 'Charmander' }).explain("executionStats")
 }
 ```
 
-##4. Rodar uma query sem índice para os campos conjuntos e uma query com índice para os campos conjuntos
+## Rodar uma query sem índice para os campos conjuntos e uma query com índice para os campos conjuntos
 
 ```
-**Sem índice**:
+Sem índice:
 
 db.pokemons.find({ $and: [{name: 'Charmander'}, {defense: 43}] }).explain("executionStats")
 {
