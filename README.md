@@ -410,4 +410,39 @@ No MongoDB não existem JOINS. Para fazer o relecionamento entre coleções, bas
 
 #### Aula 06 - Parte 02 (???)
 
+O professor Willian Bruno iniciou a aula falando um pouco sobre a função explain e sobre os índices.
+
+##### explain 
+
+Mostra "por debaixo dos panos" o que acontece quando rodamos uma **query**. 
+
+**Quando usar?**
+
+A função pode ser utilizada para analisarmos detalhadamente a forma em que as consultas estão sendo executadas.
+
+##### indices 
+
+Consultas realizadas em cima de campos indexados são mais rápidas. 
+
+**Quando usar?**
+
+Quando fazemos frequentemente consultas em cima de determinado campo e queremos que essa consulta seja mais rápida, criamos um index para esse campo.
+
+Obs: o campo **_id** é sempre indexado pelo MongoDB. um `find()` pelo **_id** é bem mais rápido que um `find()` em um campo não indexado.
+
+Sintade para criar um índice: ``db.collection.createIndex({ field: 1 })`` 
+
+**1 = ordem natural (A-Z), -1 ordem inversa (Z-A).**
+
+Sintaxe para remover um índice: ``db.collection.drop({ field: 1 })``
+
+**Exercício**:
+
+1. Utilizar a collection pokemons
+2. Criar um índice para o campo name e um índice conjunto para qualquer outros campos
+3. Rodar uma query sem índice para o campo nome e uma com índice para o campo nome
+4. Rodar uma query sem índice para os campos conjuntos e uma query com índice para os campos conjuntos
+5. As querys devem ser feitas com o explain().
+
+
 
