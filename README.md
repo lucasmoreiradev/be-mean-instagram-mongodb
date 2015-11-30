@@ -408,13 +408,19 @@ No MongoDB não existem JOINS. Para fazer o relecionamento entre coleções, bas
 ##### Links da Aula
 - [Vídeo da aula](https://www.youtube.com/watch?v=5bbWeEEzRQM&feature=share)
 
-#### Aula 06 - Parte 02 (???)
+#### Aula 06 - Parte 02 
 
 O professor Willian Bruno iniciou a aula falando um pouco sobre a função explain e sobre os índices.
 
 ##### explain 
 
 Mostra "por debaixo dos panos" o que acontece quando rodamos uma **query**. 
+
+**Como Usar?**
+
+```
+db.collection.find().explain("executionStats")
+```
 
 **Quando usar?**
 
@@ -434,7 +440,7 @@ Sintade para criar um índice: ``db.collection.createIndex({ field: 1 })``
 
 **1 = ordem natural (A-Z), -1 ordem inversa (Z-A).**
 
-Sintaxe para remover um índice: ``db.collection.drop({ field: 1 })``
+Sintaxe para remover um índice: ``db.collection.dropIndex({ field: 1 })``
 
 **Exercício**:
 
@@ -444,5 +450,4 @@ Sintaxe para remover um índice: ``db.collection.drop({ field: 1 })``
 4. Rodar uma query sem índice para os campos conjuntos e uma query com índice para os campos conjuntos
 5. As querys devem ser feitas com o explain().
 
-
-
+#### Aula 06 - Parte 03 
