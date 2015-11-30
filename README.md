@@ -442,12 +442,4 @@ Sintade para criar um índice: ``db.collection.createIndex({ field: 1 })``
 
 Sintaxe para remover um índice: ``db.collection.dropIndex({ field: 1 })``
 
-**Exercício**:
-
-1. Utilizar a collection pokemons
-2. Criar um índice para o campo name e um índice conjunto para qualquer outros campos
-3. Rodar uma query sem índice para o campo nome e uma com índice para o campo nome
-4. Rodar uma query sem índice para os campos conjuntos e uma query com índice para os campos conjuntos
-5. As querys devem ser feitas com o explain().
-
 #### Aula 06 - Parte 03 
