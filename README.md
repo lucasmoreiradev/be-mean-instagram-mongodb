@@ -418,13 +418,13 @@ O professor Willian Bruno iniciou a aula falando um pouco sobre a função expla
 
 Mostra "por debaixo dos panos" o que acontece quando rodamos uma **query**. 
 
-## Como Usar?
+### Como Usar?
 
 ```
 db.collection.find().explain("executionStats")
 ```
 
-## Quando usar?
+### Quando usar?
 
 A função pode ser utilizada para analisarmos detalhadamente a forma em que as consultas estão sendo executadas.
 
@@ -432,7 +432,7 @@ A função pode ser utilizada para analisarmos detalhadamente a forma em que as 
 
 Consultas realizadas em cima de campos indexados são mais rápidas. 
 
-## Quando usar?
+### Quando usar?
 
 Quando fazemos frequentemente consultas em cima de determinado campo e queremos que essa consulta seja mais rápida, criamos um index para esse campo.
 
