@@ -1,12 +1,12 @@
 # be-mean-instagram-mongodb 
 Guia de referência do conteúdo ministrado no módulo **mongoDB** do curso gratuíto [*Construa seu Instagram com MEAN*](http://dagora.net/be-mean/) da [Webschool.io](https://github.com/Webschool-io/)
 
-## Apresentação (Slides)
+#### Apresentação (Slides)
 [Link para slides](
 https://docs.google.com/presentation/d/1KXxmcwd47x4v2SymyiBPK7ucn80PruSvcw4mZ5S3nWc/edit?usp=sharing
 )
 
-#### Aula 01 (Export & Import)
+## Aula 01 (Export & Import)
 
 *Este resumo da aula 01 foi copiado do repositório do [Vinicius Galvão](https://github.com/viniciusgalvao/be-mean-instagram-mongodb)*
 
@@ -30,7 +30,7 @@ Finalizando a aula foram apresentados os comandos `export & import` do __mongoDB
 
 ================================================
 
-#### Aula 02 (Databases e CRUD)
+## Aula 02 (Databases e CRUD)
 
 Nessa aula foi ensinado a criar, listar e escolher databases na qual
 queremos trabalhar. Também foi mostrado como podemos criar collections e
@@ -51,7 +51,7 @@ Iniciamos os estudos CRUD. Sendo assim, vimos as seguintes funções:
 
 ================================================
 
-### Aula 03 (Busca com Operadores)
+## Aula 03 (Busca com Operadores)
 
 A aula foi iniciada com uma breve explicação sobre como o **_id** das
 coleções é gerado. Também vimos um pouco sobre a sintaxe da função **find()**,
@@ -120,9 +120,9 @@ $exists | Existe | ```var query = {campo: {$exists: true}}```
 
 ================================================
 
-#### Aula 04 (Função updade)
+## Aula 04 (Função updade)
 
-#### Parte 1 
+## Parte 1 
 
 A aula foi iniciada mostrando que temos duas formas de alterar um
 documento. São elas:
@@ -151,7 +151,7 @@ a função update, pois ele pode sumir com os outros campos do
 documento. Para efetuar um update da forma correta, existem os
 operadores de modificação***. 
 
-#### Operadores de modificação
+### Operadores de modificação
 
 **$set**: modifica ou cria um valor, caso ele não exista. Sintaxe:
 `{$set: {campo: valor}}`. Exemplo: 
@@ -182,9 +182,9 @@ Para incrementar: `db.pokemons.update({name: 'Pikachu'}, {$inc:
 
 Para decrementar: `db.pokemons.update({name: 'Pikachu'}, {$inc: {attack: -10}})`
 
-##### Operadores de Array
+### Operadores de Array
 
-##### $push
+### $push
 
 O operador `$push` adiciona um valor ao campo. Caso o campo seja um
 array existente, ele irá adicionar valores. Caso o campo não exista, ele
@@ -192,7 +192,7 @@ será criado.
 
 Sintaxe: `{$push: {campo: valor}}`
 
-##### $pushAll
+### $pushAll
 
 É passado um array de valores para um campo no documento. Eles devem ser
 adicionados um a um. Caso o
@@ -200,14 +200,14 @@ array não exista no documento, ele será criado.
 
 Sintaxe: `{$pushAll: {campo: [valores]}}`
 
-##### $pull
+### $pull
 
 Remove um determinado valor de um array existente. Caso o array não
 exista, o comando será ignorado.
 
 Sintaxe: `{$pull: {campo: valor}}`
 
-##### $pullAll
+### $pullAll
 
 É passado um array de valores para um campo no documento. Eles devem ser
 removidos um a um. Caso o array não exista no documento, ele será
@@ -221,7 +221,7 @@ não for um array, irá retornar um erro.
 ##### Links da Aula
 - [Vídeo da aula](https://www.youtube.com/watch?v=ONzJsNbv15U)
 
-#### Parte 2
+### Parte 2
 
 O Suissa disse que a [documentação do
 MongoDB](https://docs.mongodb.org/manual) é muito simples e bem
@@ -244,14 +244,14 @@ Sintaxe:
 }
 ```
 
-##### upsert
+### upsert
 
 Serve para caso o documento não seja encontrado pela **query**, ele
 insira o objeto que está sendo passado como modificação.
 
 Defaul: **FALSE**.
 
-##### setOnInsert
+### setOnInsert
 
 Com esse operador podemos definir valores que serão adicionados apenas
 se ocorrer um **upsert**, ou seja, se o objeto for inserido quando não
@@ -272,7 +272,7 @@ var options = {upsert: true}
 db.pokemons.update(query, mod, options)
 ```
 
-##### multi
+### multi
 
 Se não 'setarmos' o operador **multi** como ***TRUE***, não podemos dar
 um update em mais de um documento. Exemplo de sintaxe:
@@ -290,7 +290,7 @@ Esse update será feito em TODOS os documentos, porque o operador
 Voltamos às buscas. Função find. Precisamos saber alguns operadores de
 array para buscamos documentos mais precisamente. 
 
-##### função find() - operadores de array
+### função find() - operadores de array
 
 **$in**: O operador **$in** retorna os documentos que possuem algum dos
 valores passados no array. Sintaxe: `{campo: {$in: [Array]}`.
@@ -300,7 +300,7 @@ valores passados no array. Sintaxe: `{campo: {$in: [Array]}`.
 **$all**: Retorna documentos que possuem todos os valores informados no
 array. Mesma sintaxe dos operadores anteriores.
 
-###### Operadore de Negação
+### Operadore de Negação
 
 **$ne**: not Equal. Não funciona com regex. Sintaxe: `{campo: {$ne:
 valor}}`.
@@ -308,7 +308,7 @@ valor}}`.
 **$not**: (Operador Lógico de Negação) funciona com regex ou com
 documentos. Sintaxe: `{campo: {$not: valor}}`.
 
-##### remove
+### remove
 
 Para apagar dados de uma coleção, usaremos o **remove**.
 
@@ -322,7 +322,7 @@ apagar a coleção, deve-se utilizar a função **drop()**.
 
 ================================================
 
-#### Aula 05 
+## Aula 05 
 
 Dicas: 
 
@@ -331,11 +331,11 @@ database.
 
 - Caso não esteja utilizando o mongohack, para identar os resultados do mongo basta chamar a função **pretty()**.
 
-##### count
+### count
 
 A aula foi inicada mostrando um pouco sobre a função **count()**, vimos que a performance de utilizá-lo ao invés de utilizar o **find().lenght** para contar os registros é imensamente maior. A função **count()** também aceita querys por parâmetro. `count({})`.
 
-##### distinct
+### distinct
 
 A função **distinct()** tem a mesma ideia do **distinct** do SQL: não trazer dados
 repetidos. 
@@ -345,7 +345,7 @@ Sintaxe: `db.resturantes.distinct('borough')`.
 Ele retorna um array; podemos pegar diretamente esse array e coloca-lo em ordem
 alfabética dando um `db.restaurantes.distinct('borough').sort()`. Caso seja necessário inverter a ordem de A-Z para Z-A, basta colocar um **reverse()** depois do **sort()**.
 
-##### importação / exportação
+### importação / exportação
 
 Relembramos como importare e exportar coleções para o MondoDB.
 
@@ -363,14 +363,14 @@ mongoimport --host 127.0.0.1 --db -nome-database --collections
 nome-colecao --drop --file entrada.json
 ```
 
-##### limit
+### limit
 
 Serve para limitarmos a quantidade de coleções que teremos como resultado em uma busca. Por exemplo:
 
 `limit - find(query, campos).limit(quantidadeDeDadosQueEuPedir)`
 
 
-##### skip
+#### skip
 
 Serve para pula registros. É resultado de uma multiplicacao. Por exemplo: se
 precisarmos paginar de 10 em 10, teremos de fazer o seguinte:
@@ -381,13 +381,13 @@ db.pokemons.find({}, {name: 1, _id: 0}.limit(10).skip(10 * 0)
 0, no caso, é a página. (primeira página)
 ```
 
-##### group
+#### group
 
 Simplesmente agrupa alguma coisa.
 
 `//TODO exemplo`
 
-##### agregate
+#### agregate
 
 Agrupa documentos também. Basicamente tudo o que fazemos com o **group()**, podemos fazer com o **agregate()**.
 
@@ -401,18 +401,20 @@ Agrupa documentos também. Basicamente tudo o que fazemos com o **group()**, pod
 
 ================================================
 
-#### Aula 06 - Parte 01 (Relacionamentos)
+## Aula 06 
+
+## Parte 01 (Relacionamentos)
 
 No MongoDB não existem JOINS. Para fazer o relecionamento entre coleções, basta salvar o ***_id*** de uma coleção em outra.
 
 ##### Links da Aula
 - [Vídeo da aula](https://www.youtube.com/watch?v=5bbWeEEzRQM&feature=share)
 
-#### Aula 06 - Parte 02 
+## Parte 02 
 
 O professor Willian Bruno iniciou a aula falando um pouco sobre a função explain e sobre os índices.
 
-##### explain 
+### explain 
 
 Mostra "por debaixo dos panos" o que acontece quando rodamos uma **query**. 
 
@@ -426,7 +428,7 @@ db.collection.find().explain("executionStats")
 
 A função pode ser utilizada para analisarmos detalhadamente a forma em que as consultas estão sendo executadas.
 
-##### indices 
+### indices 
 
 Consultas realizadas em cima de campos indexados são mais rápidas. 
 
@@ -442,4 +444,4 @@ Sintade para criar um índice: ``db.collection.createIndex({ field: 1 })``
 
 Sintaxe para remover um índice: ``db.collection.dropIndex({ field: 1 })``
 
-#### Aula 06 - Parte 03 
+## Parte 03 
