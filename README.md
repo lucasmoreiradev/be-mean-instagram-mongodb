@@ -451,13 +451,52 @@ mongofiles -d be-mean-files put Os_Raios_do_Pikachu.mp4 -h 127.0.0.1
 be-mean-files = nome da database
 
 Os_Raios_do_Pikachu.mp4 =  arquivo que eu quero guardar no GridFS
- 
+
 127.0.0.1 = ip do servidor
 
 **[DICA] Se for usar o GridFS, utilize-o em um servidor próprio para configurá-lo da melhor forma possível.**
 
+# Réplica
+
+Possuímos Replicas na maioria dos bancos de dados relacionais também, ela faz o espelhamento dos seus dados de um servidor para outro, no MongoDb uma ReplicaSet pode conter 50 membros, ou seja, 50 Replicas contando com os árbitros.
+
+Todas as operações de escrita são feitas no primário e replicada para os secundários, no MongoDb devemos também replicar os Shards.
+
+A replicação ocorre em 2 etapas:
+
+- Initial Sync;
+- Replication.
+
+## Initial Sync
+
+O Initial Syn ocorre no início, quando uma Replica copia todos os dados de outra. Uma Replica utiliza-se do Initial Sync quando ela é nova ou não tem nenhum dado ou possui dados mas está faltando o histórico de replicação.
+
+## Replication
+
+Membros do conjunto de Replicas replicam os dados continuamente após a sincronização inicial. Este processo mantém os membros atualizados com todas as alterações para os dados do conjunto de Replicas.
+
+## oplog
+
+O oplog (log de operações) é uma capped collection especial que mantém os registros de todas as operações de modificação de dados.
+
+MongoDB aplica as operações no primário e, em seguida, registra as operações no oplog do primário. Os membros secundários, em seguida, copiam e aplicam essas operações em um processo assíncrono.
+
+Todos os membros do conjunto de Replicas contém uma cópia do oplog, na coleção local.oplog.rs, o que lhes permite manter o estado atual da base de dados.
+
+Para facilitar a replicação, todos os membros do conjunto de Replicas enviam batimentos cardíacos (pings) para todos os outros membros. Qualquer membro pode importar entradas oplog de qualquer outro membro.
+
+## Quando e por que usar?
+
+**SEMPRE!!!**. Sempre devemos utilizar replicação de dados para termos a segurança de que se o servidor principal cair um outro irá assumir e todo o processo da aplicação irá continuar normalmente. Algo inotável para o usuário.
+
+## Como usar?
+
+Como o exemplo é um pouco grande, não vou colocá-lo aqui. Mas está na apostila de Réplica.
+
 #### Links
 
 - [Apostila Completa de GridFS](https://github.com/Webschool-io/be-mean-instagram/blob/master/apostila/module-mongodb/gridfs.md)
+- [Apostila Completa de Réplica](https://github.com/Webschool-io/be-mean-instagram/blob/master/apostila/module-mongodb/replica.md)
+- [Vídeo da Aula](https://www.youtube.com/watch?v=IXz4IL0da1k)
 
-# Parte 03 
+# Aula 07
