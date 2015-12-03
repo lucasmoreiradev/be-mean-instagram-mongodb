@@ -438,4 +438,20 @@ Sintaxe para remover um índice: ``db.collection.dropIndex({ field: 1 })``
 
 GridFS é o sistema de arquivos do MongoDb o qual irá armazenar os arquivos binários diretamente no banco.
 
+### Por que usar?
+
+É uma boa utilizar o GridFS quando temos arquivos maiores que 16MB (tamanho de coleção máximo suportado pelo MongoDB) e queremos salva-los no banco de dados.
+
+### Como usar?
+
+```
+mongofiles -d be-mean-files put Os_Raios_do_Pikachu.mp4 -h 127.0.0.1
+```
+
+**[ DICA ] Se for usar o GridFS, utilize-o em um servidor próprio para configurá-lo da melhor forma possível.**
+
+#### Links
+
+- Apostila Completa de GridFS(https://github.com/Webschool-io/be-mean-instagram/blob/master/apostila/module-mongodb/gridfs.md)
+
 # Parte 03 
