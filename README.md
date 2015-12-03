@@ -28,8 +28,6 @@ Finalizando a aula foram apresentados os comandos `export & import` do __mongoDB
 - [Exercício Solicitado](https://github.com/Webschool-io/be-mean-instagram/blob/master/apostila/mongodb/export_import.md)
 - [Exercício Resolvido](https://github.com/Webschool-io/be-mean-instagram/blob/master/apostila/classes/mongodb/exercises/class-01-resolved-viniciusgalvao-vinicius-galvao.md)
 
-================================================
-
 # Aula 02 (Databases e CRUD)
 
 Nessa aula foi ensinado a criar, listar e escolher databases na qual
@@ -48,8 +46,6 @@ Iniciamos os estudos CRUD. Sendo assim, vimos as seguintes funções:
 - [Vídeo da aula](https://www.youtube.com/watch?v=PaNVk0V2UNI)
 - [Exercício Solicitado](https://github.com/Webschool-io/be-mean-instagram/blob/master/apostila/classes/mongodb/class-02-resolved.md)
 - [Exercício Resolvido](https://github.com/fauker/be-mean-instagram-mongodb/blob/master/exercises/class-02-resolved-fauker-lucas-moreira.md)
-
-================================================
 
 # Aula 03 (Busca com Operadores)
 
@@ -117,8 +113,6 @@ $exists | Existe | ```var query = {campo: {$exists: true}}```
 - [Vídeo da aula](https://www.youtube.com/watch?v=cIHjA1hyPPY)
 - [Exercício Solicitado](https://github.com/Webschool-io/be-mean-instagram/blob/master/apostila/classes/mongodb/class-03-resolved.md)
 - [Exercício Resolvido](https://github.com/fauker/be-mean-instagram-mongodb/blob/master/exercises/class-03-resolved-fauker-lucas-moreira.md)
-
-================================================
 
 # Aula 04 
 
@@ -320,8 +314,6 @@ apagar a coleção, deve-se utilizar a função **drop()**.
 - [Exercício Solicitado](https://github.com/Webschool-io/be-mean-instagram/blob/master/apostila/classes/mongodb/class-04-resolved.md)
 - [Exercício Resolvido](https://github.com/fauker/be-mean-instagram-mongodb/blob/master/exercises/class-04-resolved-fauker-lucas-moreira.md)
 
-================================================
-
 # Aula 05 
 
 Dicas: 
@@ -398,8 +390,6 @@ Agrupa documentos também. Basicamente tudo o que fazemos com o **group()**, pod
 - [Vídeo da aula](https://www.youtube.com/watch?v=1eHc8reT_Vk)
 - Exercício Solicitado (ainda não achei o link)
 - [Exercício Resolvido](https://github.com/fauker/be-mean-instagram-mongodb/blob/master/exercises/class-05-resolved-fauker-lucas-moreira.md)
-
-================================================
 
 # Aula 06 
 
