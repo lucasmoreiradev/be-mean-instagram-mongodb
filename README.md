@@ -449,7 +449,9 @@ mongofiles -d be-mean-files put Os_Raios_do_Pikachu.mp4 -h 127.0.0.1
 ```
 
 be-mean-files = nome da database
+
 Os_Raios_do_Pikachu.mp4 =  arquivo que eu quero guardar no GridFS
+ 
 127.0.0.1 = ip do servidor
 
 **[DICA] Se for usar o GridFS, utilize-o em um servidor próprio para configurá-lo da melhor forma possível.**
