@@ -1,5 +1,5 @@
 # be-mean-instagram-mongodb 
-Guia de referência do conteúdo ministrado no módulo **mongoDB** do curso gratuíto [*Construa seu Instagram com MEAN*](http://dagora.net/be-mean/) da [Webschool.io](https://github.com/Webschool-io/)
+Guia de referência do conteúdo ministrado no módulo **MongoDB** do curso gratuíto [*Construa seu Instagram com MEAN*](http://dagora.net/be-mean/) da [Webschool.io](https://github.com/Webschool-io/)
 
 #### Apresentação (Slides)
 [Link para slides](
