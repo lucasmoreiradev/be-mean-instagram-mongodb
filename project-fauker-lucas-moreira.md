@@ -210,6 +210,19 @@ BulkWriteResult({
 })
 ```
 
+#### 2. Cadastre 5 projetos diferentes.
+- cada um com 5 membros, sempre diferentes dentro dos projetos;
+- cada um com pelo menos 3 tags diferentes;
+    - escolha 1 *tag* onde deva ficar em 2 projetos;
+    - escolha 1 *tag* onde deva ficar em 3 projetos;
+- cada projeto com pelo menos 1 *goal*;
+    - cada *goal* com pelo menos 3 *tags*;
+    - cada *goal* com pelo menos 2 atividades, deixe 1 projeto sem.
+
+```
+TODO!
+```
+
 ## Retrieve - busca
 
 ## Update - alteração
