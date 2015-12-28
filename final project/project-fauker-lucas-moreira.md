@@ -16,15 +16,15 @@ user: {
 	id_user: ObjectId,
 	name: String,
 	bio: String,
-	date-register: Date,
-	avatar-path: String,
-	background-path: String,
+	date_register: Date,
+	avatar_path: String,
+	background_path: String,
 
 	auth: {
 		username: String,
 		email: String,
 		password: String,
-		last-acess: Date,
+		last_acess: Date,
 		online: Boolean,
 		disabled: Boolean,
 		hash-token: String
@@ -155,7 +155,75 @@ activity: {
 }
 ```
 
+TODO: explicação
+
 ## Create - cadastro
+
+#### 1. Cadastre 10 usuários diferentes.
+
+```
+var users = [
+	{name: "Adriana Castelhano", username: "adriana_castelhado"},
+	{name: "Cleusa Antas", username: "cleusa_antas"},
+	{name: "Eusébio Piñero", username: "eusebio_pinero"},
+	{name: "Ilma Doutel", username: "ilma_doutel"},
+	{name: "Marina Carvalhosa", username: "marina_carvalhosa"},
+	{name: "Milena Nieves", username: "milena_nieves"},
+	{name: "Nádia Santos", username: "nadia_santos"},
+	{name: "Palo Tamoio", username: "palo_tamoio"},
+	{name: "Silvana Jordão", username: "silvana_jordao"},
+	{name: "Virgínia Remígio", username: "virginia_remigio"}	
+]
+
+var usersList = []
+
+users.forEach(function(user) {
+	var query = {
+		name: user.name,
+		bio: "Lifelong communicator. Pop culture buff. Beer expert. Proud zombie practitioner.",
+		date_register: new Date(),
+		avatar_path: "http://i2.wp.com/tecnodia.com.br/wp-content/uploads/2013/05/facebook-geek-avatar.jpg",
+		background_path: "http://www.pulsarwallpapers.com/data/media/3/Alien%20Ink%202560X1600%20Abstract%20Background.jpg",
+		auth: {
+			username: user.username,
+			email: user.username+"@email.com",
+			password: user.username+"@"+user.username.length,
+			last_acess: new Date(),
+			online: true,
+			disabled: false,
+			hash_token: "698dc19d489c4e4db73e28a713eab07b"+user.username.length
+		}
+	}
+	usersList.push(query)
+})
+
+db.users.insert(usersList)
+
+Inserted 1 record(s) in 553ms
+BulkWriteResult({
+  "writeErrors": [ ],
+  "writeConcernErrors": [ ],
+  "nInserted": 10,
+  "nUpserted": 0,
+  "nMatched": 0,
+  "nModified": 0,
+  "nRemoved": 0,
+  "upserted": [ ]
+})
+```
+
+#### 2. Cadastre 5 projetos diferentes.
+- cada um com 5 membros, sempre diferentes dentro dos projetos;
+- cada um com pelo menos 3 tags diferentes;
+    - escolha 1 *tag* onde deva ficar em 2 projetos;
+    - escolha 1 *tag* onde deva ficar em 3 projetos;
+- cada projeto com pelo menos 1 *goal*;
+    - cada *goal* com pelo menos 3 *tags*;
+    - cada *goal* com pelo menos 2 atividades, deixe 1 projeto sem.
+
+```
+TODO!
+```
 
 ## Retrieve - busca
 
