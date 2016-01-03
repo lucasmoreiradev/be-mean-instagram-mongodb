@@ -208,6 +208,25 @@ BulkWriteResult({
     - cada *goal* com pelo menos 2 atividades, deixe 1 projeto sem.
 
 ```
+var users = db.users.find({}, {_id: 1}).toArray()
+
+for (var i = 1; i <= 2; i++) {
+	db.activities.insert({ 
+		name: 'Atividade número 1' +,
+		description: 'Descrição da atividade número 1',
+		date_begin: new Date(),
+		date_dream: new Date(),
+		date_end: new Date(),
+		realocate: false,
+		expired: false,
+		historic: {
+			date_realocate: new Date()
+		},
+		tags: [],
+		members: [],
+		comments: []
+	})
+}
 
 ```
 
