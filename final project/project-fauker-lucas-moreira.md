@@ -46,11 +46,7 @@ project: {
 	realocate: Boolean,
 	expired: Boolean,
 	visualizable_mod: String,
-	tags: [
-		{
-			tag_id: ObjectId
-		}
-	],
+	tags: [],
 
 	goals: [
 		{
@@ -61,11 +57,7 @@ project: {
 			date_end: Date,
 			realocate: Boolean,
 			expired: Boolean,
-			tags: [
-				{
-					tag_id: ObjectId
-				}
-			],			
+			tags: [],			
 
 			historic: {
 				date_realocate: Date
@@ -124,11 +116,7 @@ activity: {
 		date_realocate: Date
 	},
 
-	tags: [
-		{		
-			tag_id: ObjectId
-		}
-	],	
+	tags: [],	
 
 	members: [
 		{
@@ -222,7 +210,37 @@ BulkWriteResult({
     - cada *goal* com pelo menos 2 atividades, deixe 1 projeto sem.
 
 ```
-TODO!
+Cadastrei 17 tags diferentes:
+
+for (var i = 1; i <= 17; i++) {
+	var query = {
+		descricao: "Tag de número " + i
+	}
+	db.tags.insert(query)
+}
+
+Inserted 1 record(s) in 383ms
+Inserted 1 record(s) in 1ms
+Inserted 1 record(s) in 1ms
+Inserted 1 record(s) in 1ms
+Inserted 1 record(s) in 1ms
+Inserted 1 record(s) in 0ms
+Inserted 1 record(s) in 0ms
+Inserted 1 record(s) in 1ms
+Inserted 1 record(s) in 0ms
+Inserted 1 record(s) in 1ms
+Inserted 1 record(s) in 3ms
+Inserted 1 record(s) in 0ms
+Inserted 1 record(s) in 0ms
+Inserted 1 record(s) in 1ms
+Inserted 1 record(s) in 0ms
+Inserted 1 record(s) in 1ms
+Inserted 1 record(s) in 1ms
+WriteResult({
+  "nInserted": 1
+})
+
+
 ```
 
 ## Retrieve - busca
