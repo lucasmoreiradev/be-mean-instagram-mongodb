@@ -36,48 +36,45 @@ user: {
 
 ```
 project: {
-	id_project: ObjectId,
-	name: String,
-	description: String,
-	date_begin: String,
-	date_dream: String,
-	date_end: String,
-	visible: Boolean,
-	realocate: Boolean,
-	expired: Boolean,
-	visualizable_mod: String,
-	tags: [],
-
-	goals: [
-		{
-			name: String,
-			description: String,
-			date_begin: Date,
-			date_dream: Date,
-			date_end: Date,
-			realocate: Boolean,
-			expired: Boolean,
-			tags: [],			
-
-			historic: {
-				date_realocate: Date
-			},
-			activities: [
-				{ 
-					activity_id: ObjectId 
-				}
-			]			
-		}
-	],
-
-	members: [
-		{
-			id_user: ObjectId,
-			notify: String,
-			type: String,
-		}
+  "id": ObjectId
+  "name": String
+  "description": String
+  "date_begin": Date(),
+  "date_dream": Date(),
+  "date_end": Date(),
+  "visible": boolean
+  "realocate": boolean,
+  "expired": boolean,
+  "visualizable_mod": String
+  "tags": [],
+  "goals": [
+    {
+      "name": String
+      "description": String,
+      "date_begin": Date(),
+      "date_dream": Date(),
+      "date_end": Date(),
+      "realocate": boolean
+      "expired": boolean
+      "tags": [],
+      "historic": {
+        "date_realocate": Date()
+      },
+      "activities": [
+        {
+          "activity_id": ObjectId
+        }
+      ]
+    }
+  ],
+  "members": [
+    {
+      "id_user": ObjectId,
+      "notify": String
+      "type": String
+    }
+  ]
 }
-
 ```
 
 ## Qual a modelagem da sua coleção retirada de `projects`?
