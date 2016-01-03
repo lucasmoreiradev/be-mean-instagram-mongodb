@@ -104,42 +104,40 @@ project: {
 
 ```
 activity: {
-	name: String,
-	description: String,
-	date_begin: Date,
-	date_dream: Date,
-	date_end: Date,
-	realocate: Boolean,
-	expired: Boolean,
+	name: String
+	description: String
+	date_begin: Date(),
+	date_dream: Date(),
+	date_end: Date(),
+	realocate: false,
+	expired: false,
 
 	historic: {
-		date_realocate: Date
+		date_realocate: Date()
 	},
 
-	tags: [],	
+	tags: [],
 
-	members: [
-		{
+	members: [{
+		id_user: ObjectId,
+		notify: String,
+		type: String,
+	}],
+
+	comments: [{
+		members: [{
 			id_user: ObjectId,
 			notify: String,
 			type: String,
-
-			comments: [
-				{
-		            text: String,
-		            date_comment: String,
-		            files: [
-		            	{
-		            		path: String,
-		            		weight: String,
-		            		name: String
-		            	}
-		            ]					
-				}
-			]
-
-		}
-	],
+		}],
+        text: String,
+        date_comment: Date(),
+        files: [{
+			path: String,
+			weight: String,
+			name: String
+		}]				
+	}]
 }
 ```
 
@@ -210,36 +208,6 @@ BulkWriteResult({
     - cada *goal* com pelo menos 2 atividades, deixe 1 projeto sem.
 
 ```
-Cadastrei 17 tags diferentes:
-
-for (var i = 1; i <= 17; i++) {
-	var query = {
-		descricao: "Tag de número " + i
-	}
-	db.tags.insert(query)
-}
-
-Inserted 1 record(s) in 383ms
-Inserted 1 record(s) in 1ms
-Inserted 1 record(s) in 1ms
-Inserted 1 record(s) in 1ms
-Inserted 1 record(s) in 1ms
-Inserted 1 record(s) in 0ms
-Inserted 1 record(s) in 0ms
-Inserted 1 record(s) in 1ms
-Inserted 1 record(s) in 0ms
-Inserted 1 record(s) in 1ms
-Inserted 1 record(s) in 3ms
-Inserted 1 record(s) in 0ms
-Inserted 1 record(s) in 0ms
-Inserted 1 record(s) in 1ms
-Inserted 1 record(s) in 0ms
-Inserted 1 record(s) in 1ms
-Inserted 1 record(s) in 1ms
-WriteResult({
-  "nInserted": 1
-})
-
 
 ```
 
