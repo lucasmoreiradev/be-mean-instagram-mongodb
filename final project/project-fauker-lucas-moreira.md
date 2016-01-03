@@ -75,26 +75,6 @@ project: {
 			id_user: ObjectId,
 			notify: String,
 			type: String,
-
-			activities: [
-				{
-					activity_id: ObjectId,
-				}
-			],
-
-			comments: [
-				{
-		            text: String,
-		            date_comment: String,
-		            files: [
-		            	{
-		            		path: String,
-		            		weight: String,
-		            		name: String
-		            	}
-		            ]					
-				}
-			]
 		}
 }
 
@@ -208,12 +188,13 @@ BulkWriteResult({
     - cada *goal* com pelo menos 2 atividades, deixe 1 projeto sem.
 
 ```
-var users = db.users.find({}, {_id: 1}).toArray()
+
+// Salvando duas atividades para referenciar nos projetos
 
 for (var i = 1; i <= 2; i++) {
 	db.activities.insert({ 
-		name: 'Atividade número 1' +,
-		description: 'Descrição da atividade número 1',
+		name: 'Atividade número ' + i,
+		description: 'Descrição da atividade número ' + i,
 		date_begin: new Date(),
 		date_dream: new Date(),
 		date_end: new Date(),
@@ -227,6 +208,397 @@ for (var i = 1; i <= 2; i++) {
 		comments: []
 	})
 }
+Inserted 1 record(s) in 555ms
+Inserted 1 record(s) in 2ms
+WriteResult({
+  "nInserted": 1
+})
+Atividade número 1: "_id": ObjectId("5689a2fbc3f8dbd6487e1c74"),
+Atividade número 2: "_id": ObjectId("5689a2fcc3f8dbd6487e1c75"),
+
+var users = db.users.find({}, {id: 1}).toArray()
+
+OBS: Salvei os projetos em cinco variáveis: primeiroProjeto, segundoProjeto, terceiroProjeto, quartoProjeto, quintoProjeto para depois salvar todos eles de uma vez.
+
+//primeiro projeto
+
+MacBook-Pro-de-Lucas(mongod-3.2.0) projeto_final> primeiroProjeto
+{
+  "name": "Primeiro projeto",
+  "description": "Meu primeiro projeto",
+  "date_begin": ISODate("2016-01-03T23:14:44.355Z"),
+  "date_dream": ISODate("2016-01-03T23:14:44.355Z"),
+  "date_end": ISODate("2016-01-03T23:14:44.355Z"),
+  "visible": true,
+  "realocate": true,
+  "expired": false,
+  "visualizable_mod": "asopijovjsaopivjasdoivj",
+  "tags": [
+    "Suissa",
+    "Be MEAN",
+    "MongoDB"
+  ],
+  "goals": [
+    {
+      "name": "Ficar mt loco nas programações",
+      "description": "Ce não tá ligado",
+      "date_begin": ISODate("2016-01-03T23:14:44.355Z"),
+      "date_dream": ISODate("2016-01-03T23:14:44.355Z"),
+      "date_end": ISODate("2016-01-03T23:14:44.355Z"),
+      "realocate": false,
+      "expired": false,
+      "tags": [
+        "JavaScript",
+        "Programação",
+        "Code"
+      ],
+      "historic": {
+        "date_realocate": ISODate("2016-01-03T23:14:44.355Z")
+      },
+      "activities": [
+        {
+          "activity_id": ObjectId("5689a2fcc3f8dbd6487e1c74")
+        },
+        {
+          "activity_id": ObjectId("5689a2fcc3f8dbd6487e1c75")
+        }
+      ]
+    }
+  ],
+  "members": [
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc6"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc7"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc8"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc9"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afca"),
+      "notify": "Notificação",
+      "type": "Membro"
+    }
+  ]
+}
+
+// segunro projeto
+
+segundoProjeto
+{
+  "name": "segunro projeto",
+  "description": "Meu segunro projeto",
+  "date_begin": ISODate("2016-01-03T23:16:31.101Z"),
+  "date_dream": ISODate("2016-01-03T23:16:31.101Z"),
+  "date_end": ISODate("2016-01-03T23:16:31.101Z"),
+  "visible": true,
+  "realocate": true,
+  "expired": false,
+  "visualizable_mod": "asopijovjsaopivjasdoivj",
+  "tags": [
+    "Suissa",
+    "Be MEAN",
+    "JavaScript"
+  ],
+  "goals": [
+    {
+      "name": "Ficar expert",
+      "description": "Sé doido manuuuuu",
+      "date_begin": ISODate("2016-01-03T23:16:31.101Z"),
+      "date_dream": ISODate("2016-01-03T23:16:31.101Z"),
+      "date_end": ISODate("2016-01-03T23:16:31.101Z"),
+      "realocate": false,
+      "expired": false,
+      "tags": [
+        "JavaScript",
+        "Programação",
+        "Code"
+      ],
+      "historic": {
+        "date_realocate": ISODate("2016-01-03T23:16:31.101Z")
+      },
+      "activities": [
+        {
+          "activity_id": ObjectId("5689a2fcc3f8dbd6487e1c74")
+        },
+        {
+          "activity_id": ObjectId("5689a2fcc3f8dbd6487e1c75")
+        }
+      ]
+    }
+  ],
+  "members": [
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc6"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc7"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc8"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc9"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afca"),
+      "notify": "Notificação",
+      "type": "Membro"
+    }
+  ]
+}
+
+// terceiro projeto
+
+terceiroProjeto
+{
+  "name": "terceiro projeto",
+  "description": "Meu terceiro projeto",
+  "date_begin": ISODate("2016-01-03T23:17:53.460Z"),
+  "date_dream": ISODate("2016-01-03T23:17:53.460Z"),
+  "date_end": ISODate("2016-01-03T23:17:53.460Z"),
+  "visible": true,
+  "realocate": true,
+  "expired": false,
+  "visualizable_mod": "asopijovjsaopivjasdoivj",
+  "tags": [
+    "Webschool",
+    "Be MEAN",
+    "Web"
+  ],
+  "goals": [
+    {
+      "name": "Entender mais a stack MEAN",
+      "description": "MEAN NA VEIA!!!!",
+      "date_begin": ISODate("2016-01-03T23:17:53.460Z"),
+      "date_dream": ISODate("2016-01-03T23:17:53.460Z"),
+      "date_end": ISODate("2016-01-03T23:17:53.460Z"),
+      "realocate": false,
+      "expired": false,
+      "tags": [
+        "JavaScript",
+        "Programação",
+        "Code"
+      ],
+      "historic": {
+        "date_realocate": ISODate("2016-01-03T23:17:53.460Z")
+      },
+      "activities": [
+        {
+          "activity_id": ObjectId("5689a2fcc3f8dbd6487e1c74")
+        },
+        {
+          "activity_id": ObjectId("5689a2fcc3f8dbd6487e1c75")
+        }
+      ]
+    }
+  ],
+  "members": [
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc6"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc7"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc8"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc9"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afca"),
+      "notify": "Notificação",
+      "type": "Membro"
+    }
+  ]
+}
+
+//quarto projeto
+
+quartoProjeto
+{
+  "name": "quarto projeto",
+  "description": "Meu Quarto projeto",
+  "date_begin": ISODate("2016-01-03T23:20:16.538Z"),
+  "date_dream": ISODate("2016-01-03T23:20:16.538Z"),
+  "date_end": ISODate("2016-01-03T23:20:16.538Z"),
+  "visible": true,
+  "realocate": true,
+  "expired": false,
+  "visualizable_mod": "asopijovjsaopivjasdoivj",
+  "tags": [
+    "Frontend",
+    "Workshop",
+    "http"
+  ],
+  "goals": [
+    {
+      "name": "desenvolver tudo com JSS",
+      "description": "PQ JS EH TOPPPPP",
+      "date_begin": ISODate("2016-01-03T23:20:16.538Z"),
+      "date_dream": ISODate("2016-01-03T23:20:16.538Z"),
+      "date_end": ISODate("2016-01-03T23:20:16.538Z"),
+      "realocate": false,
+      "expired": false,
+      "tags": [
+        "JavaScript",
+        "Programação",
+        "Code"
+      ],
+      "historic": {
+        "date_realocate": ISODate("2016-01-03T23:20:16.538Z")
+      },
+      "activities": [
+        {
+          "activity_id": ObjectId("5689a2fcc3f8dbd6487e1c74")
+        },
+        {
+          "activity_id": ObjectId("5689a2fcc3f8dbd6487e1c75")
+        }
+      ]
+    }
+  ],
+  "members": [
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc6"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc7"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc8"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc9"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afca"),
+      "notify": "Notificação",
+      "type": "Membro"
+    }
+  ]
+}
+
+// quinto projeto
+
+quintoProjeto
+{
+  "name": "quintoProjeto projeto",
+  "description": "Meu Quinto projeto",
+  "date_begin": ISODate("2016-01-03T23:21:51.760Z"),
+  "date_dream": ISODate("2016-01-03T23:21:51.760Z"),
+  "date_end": ISODate("2016-01-03T23:21:51.760Z"),
+  "visible": true,
+  "realocate": true,
+  "expired": false,
+  "visualizable_mod": "asopijovjsaopivjasdoivj",
+  "tags": [
+    "js",
+    "mean",
+    "stack"
+  ],
+  "goals": [
+    {
+      "name": "ficar fodassalhao em js",
+      "description": "tudo agora será em js",
+      "date_begin": ISODate("2016-01-03T23:21:51.760Z"),
+      "date_dream": ISODate("2016-01-03T23:21:51.760Z"),
+      "date_end": ISODate("2016-01-03T23:21:51.760Z"),
+      "realocate": false,
+      "expired": false,
+      "tags": [
+        "JavaScript",
+        "Programação",
+        "Code"
+      ],
+      "historic": {
+        "date_realocate": ISODate("2016-01-03T23:21:51.760Z")
+      },
+      "activities": [ ]
+    }
+  ],
+  "members": [
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc6"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc7"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc8"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc9"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afca"),
+      "notify": "Notificação",
+      "type": "Membro"
+    }
+  ]
+}
+
+Salvando os cinco projetos:
+
+var todosProjetos = [{primeiroProjeto}, {segundoProjeto}, {terceiroProjeto}, {quartoProjeto}, {quintoProjeto}]
+
+db.projects.insert(todosProjetos)
+Inserted 1 record(s) in 639ms
+BulkWriteResult({
+  "writeErrors": [ ],
+  "writeConcernErrors": [ ],
+  "nInserted": 5,
+  "nUpserted": 0,
+  "nMatched": 0,
+  "nModified": 0,
+  "nRemoved": 0,
+  "upserted": [ ]
+})
 
 ```
 
