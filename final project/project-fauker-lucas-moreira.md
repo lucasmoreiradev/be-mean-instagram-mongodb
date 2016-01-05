@@ -682,7 +682,7 @@ membros
 
 #### 2. Liste todos os projetos com a tag que você escolheu para os 3 projetos em comum.
 
-A tag que eu escolhi para inserir em 3 projetos foi *Be MEAN*!!!
+A tag que eu escolhi para inserir em 3 projetos foi **Be MEAN**!!!
 
 ```
 var query = {tags: {$in: ['Be MEAN']}}
