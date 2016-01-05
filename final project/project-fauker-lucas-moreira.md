@@ -902,6 +902,34 @@ db.projects.find(query)
 }
 ```
 
+#### 3. Liste apenas os nomes de todas as atividades para todos os projetos.
+
+#### 4. Liste todos os projetos que não possuam uma tag.
+
+```
+var query = { tags:  { $not: { $in: ['JavaScript'] } } }
+db.projects.find(query, {name: 1})
+{
+  "_id": ObjectId("568c0576c3f8dbd6487e1c89"),
+  "name": "Primeiro projeto"
+}
+{
+  "_id": ObjectId("568c0576c3f8dbd6487e1c8b"),
+  "name": "terceiro projeto"
+}
+{
+  "_id": ObjectId("568c0576c3f8dbd6487e1c8c"),
+  "name": "quarto projeto"
+}
+{
+  "_id": ObjectId("568c0576c3f8dbd6487e1c8d"),
+  "name": "quintoProjeto projeto"
+}
+```
+
+#### 5. Liste todos os usuários que não fazem parte do primeiro projeto cadastrado.
+
+
 ## Update - alteração
 
 ## Delete - remoção
