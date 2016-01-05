@@ -682,7 +682,225 @@ membros
 
 #### 2. Liste todos os projetos com a tag que você escolheu para os 3 projetos em comum.
 
+A tag que eu escolhi para inserir em 3 projetos foi *Be MEAN*!!!
 
+```
+var query = {tags: {$in: ['Be MEAN']}}
+db.projects.find(query)
+{
+  "_id": ObjectId("568c0576c3f8dbd6487e1c89"),
+  "name": "Primeiro projeto",
+  "description": "Meu primeiro projeto",
+  "date_begin": ISODate("2016-01-05T18:03:34.041Z"),
+  "date_dream": ISODate("2016-01-05T18:03:34.041Z"),
+  "date_end": ISODate("2016-01-05T18:03:34.041Z"),
+  "visible": true,
+  "realocate": true,
+  "expired": false,
+  "visualizable_mod": "asopijovjsaopivjasdoivj",
+  "tags": [
+    "Suissa",
+    "Be MEAN",
+    "MongoDB"
+  ],
+  "goals": [
+    {
+      "name": "Ficar mt loco nas programações",
+      "description": "Ce não tá ligado",
+      "date_begin": ISODate("2016-01-05T18:03:34.041Z"),
+      "date_dream": ISODate("2016-01-05T18:03:34.041Z"),
+      "date_end": ISODate("2016-01-05T18:03:34.041Z"),
+      "realocate": false,
+      "expired": false,
+      "tags": [
+        "JavaScript",
+        "Programação",
+        "Code"
+      ],
+      "historic": {
+        "date_realocate": ISODate("2016-01-05T18:03:34.042Z")
+      },
+      "activities": [
+        {
+          "activity_id": ObjectId("5689a2fcc3f8dbd6487e1c74")
+        },
+        {
+          "activity_id": ObjectId("5689a2fcc3f8dbd6487e1c75")
+        }
+      ]
+    }
+  ],
+  "members": [
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc6"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc7"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc8"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc9"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afca"),
+      "notify": "Notificação",
+      "type": "Membro"
+    }
+  ]
+}
+{
+  "_id": ObjectId("568c0576c3f8dbd6487e1c8a"),
+  "name": "segunro projeto",
+  "description": "Meu segunro projeto",
+  "date_begin": ISODate("2016-01-05T18:03:34.092Z"),
+  "date_dream": ISODate("2016-01-05T18:03:34.092Z"),
+  "date_end": ISODate("2016-01-05T18:03:34.092Z"),
+  "visible": true,
+  "realocate": true,
+  "expired": false,
+  "visualizable_mod": "asopijovjsaopivjasdoivj",
+  "tags": [
+    "Suissa",
+    "Be MEAN",
+    "JavaScript"
+  ],
+  "goals": [
+    {
+      "name": "Ficar expert",
+      "description": "Sé doido manuuuuu",
+      "date_begin": ISODate("2016-01-05T18:03:34.092Z"),
+      "date_dream": ISODate("2016-01-05T18:03:34.092Z"),
+      "date_end": ISODate("2016-01-05T18:03:34.092Z"),
+      "realocate": false,
+      "expired": false,
+      "tags": [
+        "JavaScript",
+        "Programação",
+        "Code"
+      ],
+      "historic": {
+        "date_realocate": ISODate("2016-01-05T18:03:34.092Z")
+      },
+      "activities": [
+        {
+          "activity_id": ObjectId("5689a2fcc3f8dbd6487e1c74")
+        },
+        {
+          "activity_id": ObjectId("5689a2fcc3f8dbd6487e1c75")
+        }
+      ]
+    }
+  ],
+  "members": [
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc6"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc7"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc8"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc9"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afca"),
+      "notify": "Notificação",
+      "type": "Membro"
+    }
+  ]
+}
+{
+  "_id": ObjectId("568c0576c3f8dbd6487e1c8b"),
+  "name": "terceiro projeto",
+  "description": "Meu terceiro projeto",
+  "date_begin": ISODate("2016-01-05T18:03:34.092Z"),
+  "date_dream": ISODate("2016-01-05T18:03:34.092Z"),
+  "date_end": ISODate("2016-01-05T18:03:34.092Z"),
+  "visible": true,
+  "realocate": true,
+  "expired": false,
+  "visualizable_mod": "asopijovjsaopivjasdoivj",
+  "tags": [
+    "Webschool",
+    "Be MEAN",
+    "Web"
+  ],
+  "goals": [
+    {
+      "name": "Entender mais a stack MEAN",
+      "description": "MEAN NA VEIA!!!!",
+      "date_begin": ISODate("2016-01-05T18:03:34.092Z"),
+      "date_dream": ISODate("2016-01-05T18:03:34.092Z"),
+      "date_end": ISODate("2016-01-05T18:03:34.092Z"),
+      "realocate": false,
+      "expired": false,
+      "tags": [
+        "JavaScript",
+        "Programação",
+        "Code"
+      ],
+      "historic": {
+        "date_realocate": ISODate("2016-01-05T18:03:34.092Z")
+      },
+      "activities": [
+        {
+          "activity_id": ObjectId("5689a2fcc3f8dbd6487e1c74")
+        },
+        {
+          "activity_id": ObjectId("5689a2fcc3f8dbd6487e1c75")
+        }
+      ]
+    }
+  ],
+  "members": [
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc6"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc7"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc8"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc9"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afca"),
+      "notify": "Notificação",
+      "type": "Membro"
+    }
+  ]
+}
+```
 
 ## Update - alteração
 
