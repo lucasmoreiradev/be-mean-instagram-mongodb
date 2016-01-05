@@ -578,6 +578,7 @@ BulkWriteResult({
 
 #### 1. Liste as informações dos membros de 1 projeto específico que deve ser buscado pelo seu nome de forma a não ligar para maiúsculas e minúsculas.
 
+```
 var query = {name: /primeiro projeto/i}
 var fields = {_id: 0, members: 1}
 var membrosDosProjetos = db.projects.findOne(query, fields)
@@ -677,6 +678,10 @@ membros
     }
   }
 ]
+```
+
+#### 2. Liste todos os projetos com a tag que você escolheu para os 3 projetos em comum.
+
 
 
 ## Update - alteração
