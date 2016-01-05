@@ -215,17 +215,13 @@ Atividade número 2: "_id": ObjectId("5689a2fcc3f8dbd6487e1c75"),
 
 var users = db.users.find({}, {id: 1}).toArray()
 
-OBS: Salvei os projetos em cinco variáveis: primeiroProjeto, segundoProjeto, terceiroProjeto, quartoProjeto, quintoProjeto para depois salvar todos eles de uma vez.
-
-//primeiro projeto
-
-MacBook-Pro-de-Lucas(mongod-3.2.0) projeto_final> primeiroProjeto
+db.projects.insert([
 {
   "name": "Primeiro projeto",
   "description": "Meu primeiro projeto",
-  "date_begin": ISODate("2016-01-03T23:14:44.355Z"),
-  "date_dream": ISODate("2016-01-03T23:14:44.355Z"),
-  "date_end": ISODate("2016-01-03T23:14:44.355Z"),
+  "date_begin": new Date(),
+  "date_dream": new Date(),
+  "date_end": new Date(),
   "visible": true,
   "realocate": true,
   "expired": false,
@@ -239,9 +235,9 @@ MacBook-Pro-de-Lucas(mongod-3.2.0) projeto_final> primeiroProjeto
     {
       "name": "Ficar mt loco nas programações",
       "description": "Ce não tá ligado",
-      "date_begin": ISODate("2016-01-03T23:14:44.355Z"),
-      "date_dream": ISODate("2016-01-03T23:14:44.355Z"),
-      "date_end": ISODate("2016-01-03T23:14:44.355Z"),
+      "date_begin": new Date(),
+      "date_dream": new Date(),
+      "date_end": new Date(),
       "realocate": false,
       "expired": false,
       "tags": [
@@ -250,7 +246,7 @@ MacBook-Pro-de-Lucas(mongod-3.2.0) projeto_final> primeiroProjeto
         "Code"
       ],
       "historic": {
-        "date_realocate": ISODate("2016-01-03T23:14:44.355Z")
+        "date_realocate": new Date(),
       },
       "activities": [
         {
@@ -289,17 +285,13 @@ MacBook-Pro-de-Lucas(mongod-3.2.0) projeto_final> primeiroProjeto
       "type": "Membro"
     }
   ]
-}
-
-// segunro projeto
-
-segundoProjeto
+},
 {
   "name": "segunro projeto",
   "description": "Meu segunro projeto",
-  "date_begin": ISODate("2016-01-03T23:16:31.101Z"),
-  "date_dream": ISODate("2016-01-03T23:16:31.101Z"),
-  "date_end": ISODate("2016-01-03T23:16:31.101Z"),
+  "date_begin": new Date(),
+  "date_dream": new Date(),
+  "date_end": new Date(),
   "visible": true,
   "realocate": true,
   "expired": false,
@@ -313,9 +305,9 @@ segundoProjeto
     {
       "name": "Ficar expert",
       "description": "Sé doido manuuuuu",
-      "date_begin": ISODate("2016-01-03T23:16:31.101Z"),
-      "date_dream": ISODate("2016-01-03T23:16:31.101Z"),
-      "date_end": ISODate("2016-01-03T23:16:31.101Z"),
+      "date_begin": new Date(),
+      "date_dream": new Date(),
+      "date_end": new Date(),
       "realocate": false,
       "expired": false,
       "tags": [
@@ -324,7 +316,7 @@ segundoProjeto
         "Code"
       ],
       "historic": {
-        "date_realocate": ISODate("2016-01-03T23:16:31.101Z")
+        "date_realocate": new Date(),
       },
       "activities": [
         {
@@ -363,17 +355,13 @@ segundoProjeto
       "type": "Membro"
     }
   ]
-}
-
-// terceiro projeto
-
-terceiroProjeto
+},
 {
   "name": "terceiro projeto",
   "description": "Meu terceiro projeto",
-  "date_begin": ISODate("2016-01-03T23:17:53.460Z"),
-  "date_dream": ISODate("2016-01-03T23:17:53.460Z"),
-  "date_end": ISODate("2016-01-03T23:17:53.460Z"),
+  "date_begin": new Date(),
+  "date_dream": new Date(),
+  "date_end": new Date(),
   "visible": true,
   "realocate": true,
   "expired": false,
@@ -387,9 +375,9 @@ terceiroProjeto
     {
       "name": "Entender mais a stack MEAN",
       "description": "MEAN NA VEIA!!!!",
-      "date_begin": ISODate("2016-01-03T23:17:53.460Z"),
-      "date_dream": ISODate("2016-01-03T23:17:53.460Z"),
-      "date_end": ISODate("2016-01-03T23:17:53.460Z"),
+      "date_begin": new Date(),
+      "date_dream": new Date(),
+      "date_end": new Date(),
       "realocate": false,
       "expired": false,
       "tags": [
@@ -398,7 +386,7 @@ terceiroProjeto
         "Code"
       ],
       "historic": {
-        "date_realocate": ISODate("2016-01-03T23:17:53.460Z")
+        "date_realocate": new Date(),
       },
       "activities": [
         {
@@ -437,17 +425,13 @@ terceiroProjeto
       "type": "Membro"
     }
   ]
-}
-
-//quarto projeto
-
-quartoProjeto
+},
 {
   "name": "quarto projeto",
   "description": "Meu Quarto projeto",
-  "date_begin": ISODate("2016-01-03T23:20:16.538Z"),
-  "date_dream": ISODate("2016-01-03T23:20:16.538Z"),
-  "date_end": ISODate("2016-01-03T23:20:16.538Z"),
+  "date_begin": new Date(),
+  "date_dream": new Date(),
+  "date_end": new Date(),
   "visible": true,
   "realocate": true,
   "expired": false,
@@ -461,9 +445,9 @@ quartoProjeto
     {
       "name": "desenvolver tudo com JSS",
       "description": "PQ JS EH TOPPPPP",
-      "date_begin": ISODate("2016-01-03T23:20:16.538Z"),
-      "date_dream": ISODate("2016-01-03T23:20:16.538Z"),
-      "date_end": ISODate("2016-01-03T23:20:16.538Z"),
+      "date_begin": new Date(),
+      "date_dream": new Date(),
+      "date_end": new Date(),
       "realocate": false,
       "expired": false,
       "tags": [
@@ -472,7 +456,7 @@ quartoProjeto
         "Code"
       ],
       "historic": {
-        "date_realocate": ISODate("2016-01-03T23:20:16.538Z")
+        "date_realocate": new Date(),
       },
       "activities": [
         {
@@ -511,17 +495,13 @@ quartoProjeto
       "type": "Membro"
     }
   ]
-}
-
-// quinto projeto
-
-quintoProjeto
+},
 {
   "name": "quintoProjeto projeto",
   "description": "Meu Quinto projeto",
-  "date_begin": ISODate("2016-01-03T23:21:51.760Z"),
-  "date_dream": ISODate("2016-01-03T23:21:51.760Z"),
-  "date_end": ISODate("2016-01-03T23:21:51.760Z"),
+  "date_begin": new Date(),
+  "date_dream": new Date(),
+  "date_end": new Date(),
   "visible": true,
   "realocate": true,
   "expired": false,
@@ -535,9 +515,9 @@ quintoProjeto
     {
       "name": "ficar fodassalhao em js",
       "description": "tudo agora será em js",
-      "date_begin": ISODate("2016-01-03T23:21:51.760Z"),
-      "date_dream": ISODate("2016-01-03T23:21:51.760Z"),
-      "date_end": ISODate("2016-01-03T23:21:51.760Z"),
+      "date_begin": new Date(),
+      "date_dream": new Date(),
+      "date_end": new Date(),
       "realocate": false,
       "expired": false,
       "tags": [
@@ -546,7 +526,7 @@ quintoProjeto
         "Code"
       ],
       "historic": {
-        "date_realocate": ISODate("2016-01-03T23:21:51.760Z")
+        "date_realocate": new Date(),
       },
       "activities": [ ]
     }
@@ -578,14 +558,9 @@ quintoProjeto
       "type": "Membro"
     }
   ]
-}
+}])
 
-Salvando os cinco projetos:
-
-var todosProjetos = [{primeiroProjeto}, {segundoProjeto}, {terceiroProjeto}, {quartoProjeto}, {quintoProjeto}]
-
-db.projects.insert(todosProjetos)
-Inserted 1 record(s) in 639ms
+Inserted 1 record(s) in 517ms
 BulkWriteResult({
   "writeErrors": [ ],
   "writeConcernErrors": [ ],
@@ -600,6 +575,8 @@ BulkWriteResult({
 ```
 
 ## Retrieve - busca
+
+#### 1. Liste as informações dos membros de 1 projeto específico que deve ser buscado pelo seu nome de forma a não ligar para maiúsculas e minúsculas.
 
 ## Update - alteração
 
