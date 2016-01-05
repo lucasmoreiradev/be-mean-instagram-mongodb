@@ -578,6 +578,107 @@ BulkWriteResult({
 
 #### 1. Liste as informações dos membros de 1 projeto específico que deve ser buscado pelo seu nome de forma a não ligar para maiúsculas e minúsculas.
 
+var query = {name: /primeiro projeto/i}
+var fields = {_id: 0, members: 1}
+var membrosDosProjetos = db.projects.findOne(query, fields)
+
+var membros = [];
+
+membrosDosProjetos.members.forEach(function(membro) {
+	membros.push(db.users.findOne({_id: membro.id_user}))	
+})
+
+membros
+
+[
+  {
+    "_id": ObjectId("56807d83e15bcf96ff94afc6"),
+    "name": "Cleusa Antas",
+    "bio": "Lifelong communicator. Pop culture buff. Beer expert. Proud zombie practitioner.",
+    "date_register": ISODate("2015-12-28T00:08:29.811Z"),
+    "avatar_path": "http://i2.wp.com/tecnodia.com.br/wp-content/uploads/2013/05/facebook-geek-avatar.jpg",
+    "background_path": "http://www.pulsarwallpapers.com/data/media/3/Alien%20Ink%202560X1600%20Abstract%20Background.jpg",
+    "auth": {
+      "username": "cleusa_antas",
+      "email": "cleusa_antas@email.com",
+      "password": "cleusa_antas@12",
+      "last_acess": ISODate("2015-12-28T00:08:29.811Z"),
+      "online": true,
+      "disabled": false,
+      "hash_token": "698dc19d489c4e4db73e28a713eab07b12"
+    }
+  },
+  {
+    "_id": ObjectId("56807d83e15bcf96ff94afc7"),
+    "name": "Eusébio Piñero",
+    "bio": "Lifelong communicator. Pop culture buff. Beer expert. Proud zombie practitioner.",
+    "date_register": ISODate("2015-12-28T00:08:29.811Z"),
+    "avatar_path": "http://i2.wp.com/tecnodia.com.br/wp-content/uploads/2013/05/facebook-geek-avatar.jpg",
+    "background_path": "http://www.pulsarwallpapers.com/data/media/3/Alien%20Ink%202560X1600%20Abstract%20Background.jpg",
+    "auth": {
+      "username": "eusebio_pinero",
+      "email": "eusebio_pinero@email.com",
+      "password": "eusebio_pinero@14",
+      "last_acess": ISODate("2015-12-28T00:08:29.811Z"),
+      "online": true,
+      "disabled": false,
+      "hash_token": "698dc19d489c4e4db73e28a713eab07b14"
+    }
+  },
+  {
+    "_id": ObjectId("56807d83e15bcf96ff94afc8"),
+    "name": "Ilma Doutel",
+    "bio": "Lifelong communicator. Pop culture buff. Beer expert. Proud zombie practitioner.",
+    "date_register": ISODate("2015-12-28T00:08:29.811Z"),
+    "avatar_path": "http://i2.wp.com/tecnodia.com.br/wp-content/uploads/2013/05/facebook-geek-avatar.jpg",
+    "background_path": "http://www.pulsarwallpapers.com/data/media/3/Alien%20Ink%202560X1600%20Abstract%20Background.jpg",
+    "auth": {
+      "username": "ilma_doutel",
+      "email": "ilma_doutel@email.com",
+      "password": "ilma_doutel@11",
+      "last_acess": ISODate("2015-12-28T00:08:29.811Z"),
+      "online": true,
+      "disabled": false,
+      "hash_token": "698dc19d489c4e4db73e28a713eab07b11"
+    }
+  },
+  {
+    "_id": ObjectId("56807d83e15bcf96ff94afc9"),
+    "name": "Marina Carvalhosa",
+    "bio": "Lifelong communicator. Pop culture buff. Beer expert. Proud zombie practitioner.",
+    "date_register": ISODate("2015-12-28T00:08:29.811Z"),
+    "avatar_path": "http://i2.wp.com/tecnodia.com.br/wp-content/uploads/2013/05/facebook-geek-avatar.jpg",
+    "background_path": "http://www.pulsarwallpapers.com/data/media/3/Alien%20Ink%202560X1600%20Abstract%20Background.jpg",
+    "auth": {
+      "username": "marina_carvalhosa",
+      "email": "marina_carvalhosa@email.com",
+      "password": "marina_carvalhosa@17",
+      "last_acess": ISODate("2015-12-28T00:08:29.811Z"),
+      "online": true,
+      "disabled": false,
+      "hash_token": "698dc19d489c4e4db73e28a713eab07b17"
+    }
+  },
+  {
+    "_id": ObjectId("56807d83e15bcf96ff94afca"),
+    "name": "Milena Nieves",
+    "bio": "Lifelong communicator. Pop culture buff. Beer expert. Proud zombie practitioner.",
+    "date_register": ISODate("2015-12-28T00:08:29.811Z"),
+    "avatar_path": "http://i2.wp.com/tecnodia.com.br/wp-content/uploads/2013/05/facebook-geek-avatar.jpg",
+    "background_path": "http://www.pulsarwallpapers.com/data/media/3/Alien%20Ink%202560X1600%20Abstract%20Background.jpg",
+    "auth": {
+      "username": "milena_nieves",
+      "email": "milena_nieves@email.com",
+      "password": "milena_nieves@13",
+      "last_acess": ISODate("2015-12-28T00:08:29.811Z"),
+      "online": true,
+      "disabled": false,
+      "hash_token": "698dc19d489c4e4db73e28a713eab07b13"
+    }
+  }
+]
+
+
 ## Update - alteração
 
 ## Delete - remoção
