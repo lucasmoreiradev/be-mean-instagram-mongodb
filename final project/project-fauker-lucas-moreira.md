@@ -955,6 +955,35 @@ db.projects.find(query, {name: 1})
 
 #### 5. Liste todos os usuários que não fazem parte do primeiro projeto cadastrado.
 
+```
+var usuariosPrimeiroProjeto = db.projects.findOne({name: /primeiro projeto/i},{members:1, _id:0})
+var idsUsuariosPrimeiroProjeto = []
+usuariosPrimeiroProjeto.members.forEach(function (user) {
+  idsUsuariosPrimeiroProjeto.push(user.id_user)
+})
+
+db.users.find({_id: {$not: {$in: idsUsuariosPrimeiroProjeto}}}, {name: 1})
+{
+  "_id": ObjectId("56807d83e15bcf96ff94afc5"),
+  "name": "Adriana Castelhano"
+}
+{
+  "_id": ObjectId("56807d83e15bcf96ff94afcb"),
+  "name": "Nádia Santos"
+}
+{
+  "_id": ObjectId("56807d83e15bcf96ff94afcc"),
+  "name": "Palo Tamoio"
+}
+{
+  "_id": ObjectId("56807d83e15bcf96ff94afcd"),
+  "name": "Silvana Jordão"
+}
+{
+  "_id": ObjectId("56807d83e15bcf96ff94afce"),
+  "name": "Virgínia Remígio"
+}
+```
 
 ## Update - alteração
 
