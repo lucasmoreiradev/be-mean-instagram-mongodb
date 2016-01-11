@@ -1006,11 +1006,24 @@ WriteResult({
 #### 2. Adicione 1 tag diferente para cada projeto.
 
 ```
+var projetos = db.projects.find({}, {name: 1}).toArray()
+projetos.forEach(function (projeto) {
+  var mods = {$push: {tags: 'Nova tag do projeto ' + projeto.name}}
+  db.projects.update({_id: projeto._id}, mods)
+})  
+
+Updated 1 existing record(s) in 70ms
+Updated 1 existing record(s) in 1ms
+Updated 1 existing record(s) in 1ms
+Updated 1 existing record(s) in 1ms
+Updated 1 existing record(s) in 0ms
 ```
 
 #### 3. Adicione 2 membros diferentes para cada projeto.
 
 ```
+var idsUsers = db.users.find({}, {_id: 1}).toArray()
+// dps faco o resto
 ```
 
 #### 4. Adicione 1 comentário em cada atividade, deixe apenas 1 projeto sem.
