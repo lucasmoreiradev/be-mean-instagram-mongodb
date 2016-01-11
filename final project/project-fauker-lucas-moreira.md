@@ -987,6 +987,42 @@ db.users.find({_id: {$not: {$in: idsUsuariosPrimeiroProjeto}}}, {name: 1})
 
 ## Update - alteração
 
+#### 1. Adicione para todos os projetos o campo views: 0.
+
+```
+var query = {}
+var mod = {$set: {views: 0}}
+var options = {multi: true}
+db.projects.update(query, mod, options)
+
+Updated 5 existing record(s) in 118ms
+WriteResult({
+  "nMatched": 5,
+  "nUpserted": 0,
+  "nModified": 5
+})  
+```
+
+#### 2. Adicione 1 tag diferente para cada projeto.
+
+```
+```
+
+#### 3. Adicione 2 membros diferentes para cada projeto.
+
+```
+```
+
+#### 4. Adicione 1 comentário em cada atividade, deixe apenas 1 projeto sem.
+
+```
+```
+
+#### 5. Adicione 1 projeto inteiro com UPSERT.
+
+```
+```
+
 ## Delete - remoção
 
 ## Sharding
