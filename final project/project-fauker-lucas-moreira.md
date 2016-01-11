@@ -250,7 +250,7 @@ db.projects.insert([
       },
       "activities": [
         {
-          "activity_id": ObjectId("5689a2fcc3f8dbd6487e1c74")
+          "activity_id": ObjectId("5689a2fbc3f8dbd6487e1c74")
         },
         {
           "activity_id": ObjectId("5689a2fcc3f8dbd6487e1c75")
@@ -320,7 +320,7 @@ db.projects.insert([
       },
       "activities": [
         {
-          "activity_id": ObjectId("5689a2fcc3f8dbd6487e1c74")
+          "activity_id": ObjectId("5689a2fbc3f8dbd6487e1c74")
         },
         {
           "activity_id": ObjectId("5689a2fcc3f8dbd6487e1c75")
@@ -390,7 +390,7 @@ db.projects.insert([
       },
       "activities": [
         {
-          "activity_id": ObjectId("5689a2fcc3f8dbd6487e1c74")
+          "activity_id": ObjectId("5689a2fbc3f8dbd6487e1c74")
         },
         {
           "activity_id": ObjectId("5689a2fcc3f8dbd6487e1c75")
@@ -460,7 +460,7 @@ db.projects.insert([
       },
       "activities": [
         {
-          "activity_id": ObjectId("5689a2fcc3f8dbd6487e1c74")
+          "activity_id": ObjectId("5689a2fbc3f8dbd6487e1c74")
         },
         {
           "activity_id": ObjectId("5689a2fcc3f8dbd6487e1c75")
@@ -903,6 +903,32 @@ db.projects.find(query)
 ```
 
 #### 3. Liste apenas os nomes de todas as atividades para todos os projetos.
+
+```
+var nomesAtividades = []
+var projetos = db.projects.find({}, {'goals.activities': 1, _id: 0}).toArray()
+  projetos.forEach(function (projeto) {
+    var atividades = projeto.goals[0].activities
+    atividades.forEach(function (atividade) {
+      var atv = db.activities.findOne({_id: atividade.activity_id})
+      if (atv) {
+          nomesAtividades.push(atv.name)
+      }
+    })
+  })
+
+nomesAtividades
+[
+  "Atividade número 1",
+  "Atividade número 2",
+  "Atividade número 1",
+  "Atividade número 2",
+  "Atividade número 1",
+  "Atividade número 2",
+  "Atividade número 1",
+  "Atividade número 2"
+]
+```
 
 #### 4. Liste todos os projetos que não possuam uma tag.
 
