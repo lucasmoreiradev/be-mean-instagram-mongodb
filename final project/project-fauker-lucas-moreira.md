@@ -1180,6 +1180,31 @@ WriteResult({
 
 ## Delete - remoção
 
+#### 1. Apague todos os projetos que não possuam tags.
+
+```
+```
+
+#### 2. Apague todos os projetos que não possuam comentários nas atividades.
+
+```
+```
+
+#### 3. Apague todos os projetos que não possuam atividades.
+
+```
+```
+
+#### 4. Escolha 2 usuário e apague todos os projetos em que os 2 fazem parte.
+
+```
+```
+
+#### 5. Apague todos os projetos que possuam uma determinada tag em goal.
+
+```
+```
+
 ## Sharding
 // coloque aqui todos os comandos que você executou
 
