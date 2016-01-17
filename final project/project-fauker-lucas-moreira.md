@@ -1022,8 +1022,40 @@ Updated 1 existing record(s) in 0ms
 #### 3. Adicione 2 membros diferentes para cada projeto.
 
 ```
+var projetos = db.projects.find().toArray()
 var idsUsers = db.users.find({}, {_id: 1}).toArray()
-// dps faco o resto
+
+for (var i = 0; i < projetos.length; i++) {
+  var primeiroMembro = {
+    id_user: idsUsers[i],
+    notify: 'Notificação',
+    type: 'Membro'
+  };
+
+  var segundoMembro = {
+    id_user: idsUsers[i+1],
+    notify: 'Notificação',
+    type: 'Membro'
+  };
+  db.projects.update({ _id: projetos[i]._id }, { $push: { members: primeiroMembro } });
+  db.projects.update({ _id: projetos[i]._id }, { $push: { members: segundoMembro } });  
+}
+
+Updated 1 existing record(s) in 46ms
+Updated 1 existing record(s) in 10ms
+Updated 1 existing record(s) in 1ms
+Updated 1 existing record(s) in 1ms
+Updated 1 existing record(s) in 1ms
+Updated 1 existing record(s) in 0ms
+Updated 1 existing record(s) in 1ms
+Updated 1 existing record(s) in 1ms
+Updated 1 existing record(s) in 1ms
+Updated 1 existing record(s) in 0ms
+WriteResult({
+  "nMatched": 1,
+  "nUpserted": 0,
+  "nModified": 1
+})
 ```
 
 #### 4. Adicione 1 comentário em cada atividade, deixe apenas 1 projeto sem.
