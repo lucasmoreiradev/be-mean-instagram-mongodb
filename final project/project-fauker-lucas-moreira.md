@@ -1181,6 +1181,13 @@ WriteResult({
 #### 1. Apague todos os projetos que não possuam tags.
 
 ```
+var query = {tags: { $eq:[] }}
+db.projects.remove(query)
+
+Removed 0 record(s) in 33ms
+WriteResult({
+  "nRemoved": 0
+})
 ```
 
 #### 2. Apague todos os projetos que não possuam comentários nas atividades.
