@@ -1061,6 +1061,42 @@ WriteResult({
 #### 4. Adicione 1 comentário em cada atividade, deixe apenas 1 projeto sem.
 
 ```
+var atividades = db.activities.find().toArray()
+var idsUsers = db.users.find({}, {_id: 1}).toArray()
+
+//comecando pela segunda atividade (1)
+for (var i = 1; i < atividades.length; i++) {
+  comentario = {
+    members: [{
+      id_user: idsUsers[i],
+      notify: 'Notificacao',
+      type: 'Member'
+    }],
+    text: 'Vejam só!!! Este é o comentário da atividade ' + atividades[i],
+    date_comment: new Date(),
+    files: [{
+      path: '/Users/fauker/',
+      weight: i + 'MB',
+      name: 'Document' + i + '.pdf'
+    }]
+  }
+  db.activities.update({ _id: atividades[i]._id }, { $push: { comments: comentario } });
+}
+
+Updated 1 existing record(s) in 4ms
+Updated 1 existing record(s) in 1ms
+Updated 1 existing record(s) in 1ms
+Updated 1 existing record(s) in 1ms
+Updated 1 existing record(s) in 0ms
+Updated 1 existing record(s) in 1ms
+Updated 1 existing record(s) in 1ms
+Updated 1 existing record(s) in 1ms
+Updated 1 existing record(s) in 1ms
+WriteResult({
+  "nMatched": 1,
+  "nUpserted": 0,
+  "nModified": 1
+})
 ```
 
 #### 5. Adicione 1 projeto inteiro com UPSERT.
