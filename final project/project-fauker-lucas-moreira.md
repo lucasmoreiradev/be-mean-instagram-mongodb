@@ -1102,6 +1102,80 @@ WriteResult({
 #### 5. Adicione 1 projeto inteiro com UPSERT.
 
 ```
+var mods = {
+  "name": "Projeto inserido com upsert",
+  "description": "Projeto inserido com upsert",
+  "date_begin": new Date(),
+  "date_dream": new Date(),
+  "date_end": new Date(),
+  "visible": true,
+  "realocate": true,
+  "expired": false,
+  "visualizable_mod": "asopijovjsaopivjasdoivj",
+  "tags": [
+    "upsert",
+    "update",
+    "collections"
+  ],
+  "goals": [
+    {
+      "name": "inserir saporra com upsert",
+      "description": "agr eh com upsert man",
+      "date_begin": new Date(),
+      "date_dream": new Date(),
+      "date_end": new Date(),
+      "realocate": false,
+      "expired": false,
+      "tags": [
+        "Mouse",
+        "Teclado",
+        "Fone"
+      ],
+      "historic": {
+        "date_realocate": new Date(),
+      },
+      "activities": [ ]
+    }
+  ],
+  "members": [
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc6"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc7"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc8"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afc9"),
+      "notify": "Notificação",
+      "type": "Membro"
+    },
+    {
+      "id_user": ObjectId("56807d83e15bcf96ff94afca"),
+      "notify": "Notificação",
+      "type": "Membro"
+    }
+  ]
+}
+
+var query = {name: /projeto inserido com upsert/}
+var options = {upsert: true}
+db.projects.update(query, mods, options)
+
+WriteResult({
+  "nMatched": 0,
+  "nUpserted": 1,
+  "nModified": 0,
+  "_id": ObjectId("569bc6dffea6338ac4c762c9")
+})
 ```
 
 ## Delete - remoção
