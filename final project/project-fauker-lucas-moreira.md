@@ -1239,12 +1239,29 @@ projects.forEach(function (project) {
   };
 });
 
-Não acontece nada pq todos os projetos já foram removidos.
+Removed 0 record(s) in 16ms
+WriteResult({
+  "nRemoved": 0
+})
 ```
 
 #### 5. Apague todos os projetos que possuam uma determinada tag em goal.
 
 ```
+var query = {'goals.tags': {$in: ['JavaScript']}}
+{
+  "goals.tags": {
+    "$in": [
+      "JavaScript"
+    ]
+  }
+}
+
+db.projects.remove(query);  
+Removed 0 record(s) in 33ms
+WriteResult({
+  "nRemoved": 0
+})
 ```
 
 ## Sharding
