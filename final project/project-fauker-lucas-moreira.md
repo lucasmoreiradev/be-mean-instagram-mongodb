@@ -1193,6 +1193,21 @@ WriteResult({
 #### 2. Apague todos os projetos que não possuam comentários nas atividades.
 
 ```
+var projects = db.projects.find().toArray();
+
+projects.forEach(function (project) {
+  project.goals[0].activities.forEach(function (activity) {
+    activity = db.activities.findOne({_id: activity.activity_id});
+    if (activity.comments.length == 0) {
+      db.projects.remove(project);
+    };
+  });
+});
+
+Removed 1 record(s) in 250ms
+Removed 1 record(s) in 1ms
+Removed 1 record(s) in 0ms
+Removed 1 record(s) in 2ms
 ```
 
 #### 3. Apague todos os projetos que não possuam atividades.
