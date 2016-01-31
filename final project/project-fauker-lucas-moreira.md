@@ -1213,6 +1213,14 @@ Removed 1 record(s) in 2ms
 #### 3. Apague todos os projetos que não possuam atividades.
 
 ```
+var projects = db.projects.find().toArray();
+projects.forEach(function (project) {
+  if (project.goals[0].activities.length == 0) {
+      db.projects.remove(project);
+  };
+});
+Removed 1 record(s) in 6ms
+Removed 1 record(s) in 1ms
 ```
 
 #### 4. Escolha 2 usuário e apague todos os projetos em que os 2 fazem parte.
