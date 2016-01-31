@@ -1264,8 +1264,19 @@ WriteResult({
 })
 ```
 
-## Sharding
-// coloque aqui todos os comandos que você executou
+## Gerenciamento de usuários
 
-## Replica
-// coloque aqui todos os comandos que você executou
+#### 1. Crie um usuário com permissões APENAS de Leitura.
+#### 2. Crie um usuário com permissões de Escrita e Leitura.
+#### 3. Adicionar o papel grantRolesToUser e revokeRole para o usuário com Escrita e Leitura.
+#### 4. Remover o papel grantRolesToUser para o usuário com Escrita e Leitura.
+#### 5. Listar todos os usuários com seus papéis e ações.
+
+## Cluster
+
+Depois de criada toda sua base você deverá criar um cluster utilizando:
+
+1 Router
+1 Config Server
+3 Shardings
+3 Replicas
