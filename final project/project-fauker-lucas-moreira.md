@@ -1223,9 +1223,23 @@ Removed 1 record(s) in 6ms
 Removed 1 record(s) in 1ms
 ```
 
-#### 4. Escolha 2 usuário e apague todos os projetos em que os 2 fazem parte.
+#### 4. Escolha 2 usuários e apague todos os projetos em que os 2 fazem parte.
 
 ```
+var user1 = db.users.find()[0]
+var user2 = db.users.find()[1]
+
+var projects = db.projects.find().toArray()
+
+projects.forEach(function (project) {
+  project.members.forEach(member) {
+    if (member.id_user == user1._id) {
+      db.projects.remove(project);
+    };
+  };
+});
+
+Não acontece nada pq todos os projetos já foram removidos.
 ```
 
 #### 5. Apague todos os projetos que possuam uma determinada tag em goal.
