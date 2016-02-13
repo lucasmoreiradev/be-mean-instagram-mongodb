@@ -1289,6 +1289,27 @@ Successfully added user: {
 ```
 
 #### 2. Crie um usuário com permissões de Escrita e Leitura.
+
+```
+db.createUser(
+  {
+    user: "ReadWriteUser",
+    pwd: "readWrite123",
+    roles: [ { role: "readWrite", db: "projeto_final" } ]
+  }
+)
+
+Successfully added user: {
+  "user": "ReadWriteUser",
+  "roles": [
+    {
+      "role": "readWrite",
+      "db": "projeto_final"
+    }
+  ]
+}
+```
+
 #### 3. Adicionar o papel grantRolesToUser e revokeRole para o usuário com Escrita e Leitura.
 #### 4. Remover o papel grantRolesToUser para o usuário com Escrita e Leitura.
 #### 5. Listar todos os usuários com seus papéis e ações.
