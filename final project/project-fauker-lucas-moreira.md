@@ -1311,6 +1311,68 @@ Successfully added user: {
 ```
 
 #### 3. Adicionar o papel grantRolesToUser e revokeRole para o usuário com Escrita e Leitura.
+
+```
+db.createRole(
+   {
+     role: "grantRolesToUser",
+     privileges: [
+       { resource: { db: "projeto_final", collection: "" }, actions: [ "grantRole" ] }
+     ],
+     roles: []
+   }
+)
+
+{
+  "role": "grantRolesToUser",
+  "privileges": [
+    {
+      "resource": {
+        "db": "projeto_final",
+        "collection": ""
+      },
+      "actions": [
+        "grantRole"
+      ]
+    }
+  ],
+  "roles": [ ]
+}
+
+db.createRole(
+   {
+     role: "revokeRole",
+     privileges: [
+       { resource: { db: "projeto_final", collection: "" }, actions: [ "revokeRole" ] }
+     ],
+     roles: []
+   }
+)
+
+{
+  "role": "revokeRole",
+  "privileges": [
+    {
+      "resource": {
+        "db": "projeto_final",
+        "collection": ""
+      },
+      "actions": [
+        "revokeRole"
+      ]
+    }
+  ],
+  "roles": [ ]
+}
+
+db.grantRolesToUser(
+    "ReadWriteUser",
+    [
+      "grantRolesToUser", "revokeRole"
+    ]
+)
+```
+
 #### 4. Remover o papel grantRolesToUser para o usuário com Escrita e Leitura.
 #### 5. Listar todos os usuários com seus papéis e ações.
 
