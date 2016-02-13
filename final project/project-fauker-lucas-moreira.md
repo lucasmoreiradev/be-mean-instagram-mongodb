@@ -1374,7 +1374,50 @@ db.grantRolesToUser(
 ```
 
 #### 4. Remover o papel grantRolesToUser para o usuário com Escrita e Leitura.
+
+```
+db.revokeRolesFromUser(
+    "ReadWriteUser",
+    [
+      { role: "grantRolesToUser", db: "projeto_final" }
+    ]
+)
+```
+
 #### 5. Listar todos os usuários com seus papéis e ações.
+
+```
+db.getUsers()
+[
+  {
+    "_id": "projeto_final.ReadUser",
+    "user": "ReadUser",
+    "db": "projeto_final",
+    "roles": [
+      {
+        "role": "read",
+        "db": "projeto_final"
+      }
+    ]
+  },
+  {
+    "_id": "projeto_final.ReadWriteUser",
+    "user": "ReadWriteUser",
+    "db": "projeto_final",
+    "roles": [
+      {
+        "role": "revokeRole",
+        "db": "projeto_final"
+      },
+      {
+        "role": "readWrite",
+        "db": "projeto_final"
+      }
+    ]
+  }
+]
+```
+
 
 ## Cluster
 
