@@ -1267,6 +1267,27 @@ WriteResult({
 ## Gerenciamento de usuários
 
 #### 1. Crie um usuário com permissões APENAS de Leitura.
+
+```
+db.createUser(
+  {
+    user: "ReadUser",
+    pwd: "read123",
+    roles: [ { role: "read", db: "projeto_final" } ]
+  }
+)
+
+Successfully added user: {
+  "user": "ReadUser",
+  "roles": [
+    {
+      "role": "read",
+      "db": "projeto_final"
+    }
+  ]
+}
+```
+
 #### 2. Crie um usuário com permissões de Escrita e Leitura.
 #### 3. Adicionar o papel grantRolesToUser e revokeRole para o usuário com Escrita e Leitura.
 #### 4. Remover o papel grantRolesToUser para o usuário com Escrita e Leitura.
