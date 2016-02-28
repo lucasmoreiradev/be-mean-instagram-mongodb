@@ -1421,12 +1421,9 @@ db.getUsers()
 
 ## Cluster
 
-### Depois de criada toda sua base você deverá criar um cluster utilizando:
+## Depois de criada toda sua base você deverá criar um cluster utilizando:
 
-#### 1 Router
-#### 1 Config Server
-#### 3 Shardings
-#### 3 Replicas
+### 1 Router, 1 Config Server, 3 Shardings e 3 Replicas
 
 #### Criando o Config Server
 
