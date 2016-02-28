@@ -1439,11 +1439,13 @@ mongos --configdb localhost:27010 --port 27011
 #### Criando os Shards
 
 ```
-mkdir /data/shard1 && mkdir /data/shard2 && mkdir /data/shard3
+mkdir data/shard1
+mkdir data/shard2
+mkdir data/shard3
 
-mongod --port 27012 --dbpath /data/shard1
-mongod --port 27013 --dbpath /data/shard2
-mongod --port 27014 --dbpath /data/shard3
+mongod --port 27012 --dbpath data/shard1
+mongod --port 27013 --dbpath data/shard2
+mongod --port 27014 --dbpath data/shard3
 ```
 
 #### Registrando os Shards no Router
@@ -1488,4 +1490,200 @@ sh.shardCollection("be-mean.notas", {"_id" : 1})
   "ok": 1
 }
 ```
+
+### Réplicas
+
+Criação das pastas para armazenamento das réplicas:
+
+```
+mkdir data/rs1
+mkdir data/rs2
+mkdir data/rs3
+```
+
+Iniciando os processos do `mongod` com replSet, da seguinte forma:
+
+```
+mongod --replSet replica_set --port 27017 --dbpath data/rs1
+2016-02-28T12:30:04.821-0300 I CONTROL  [initandlisten] MongoDB starting : pid=1821 port=27017 dbpath=data/rs1/ 64-bit host=MacBook-Pro-de-Lucas.local
+2016-02-28T12:30:04.822-0300 I CONTROL  [initandlisten] db version v3.2.0
+2016-02-28T12:30:04.822-0300 I CONTROL  [initandlisten] git version: 45d947729a0315accb6d4f15a6b06be6d9c19fe7
+2016-02-28T12:30:04.822-0300 I CONTROL  [initandlisten] allocator: system
+2016-02-28T12:30:04.822-0300 I CONTROL  [initandlisten] modules: none
+2016-02-28T12:30:04.822-0300 I CONTROL  [initandlisten] build environment:
+2016-02-28T12:30:04.822-0300 I CONTROL  [initandlisten]     distarch: x86_64
+2016-02-28T12:30:04.823-0300 I CONTROL  [initandlisten]     target_arch: x86_64
+2016-02-28T12:30:04.823-0300 I CONTROL  [initandlisten] options: { net: { port: 27017 }, replication: { replSet: "replica_set" }, storage: { dbPath: "data/rs1/" } }
+2016-02-28T12:30:04.824-0300 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=4G,session_max=20000,eviction=(threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2016-02-28T12:30:19.207-0300 I CONTROL  [initandlisten] 
+2016-02-28T12:30:19.207-0300 I CONTROL  [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000
+2016-02-28T12:30:30.608-0300 I REPL     [initandlisten] Did not find local voted for document at startup;  NoMatchingDocument Did not find replica set lastVote document in local.replset.election
+2016-02-28T12:30:30.609-0300 I REPL     [initandlisten] Did not find local replica set configuration document at startup;  NoMatchingDocument Did not find replica set configuration document in local.system.replset
+2016-02-28T12:30:31.381-0300 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2016-02-28T12:30:31.381-0300 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'data/rs1/diagnostic.data'
+2016-02-28T12:30:40.529-0300 I NETWORK  [initandlisten] waiting for connections on port 27017
+
+
+mongod --replSet replica_set --port 27018 --dbpath data/rs2
+2016-02-28T12:30:27.737-0300 I CONTROL  [initandlisten] MongoDB starting : pid=1838 port=27018 dbpath=data/rs2 64-bit host=MacBook-Pro-de-Lucas.local
+2016-02-28T12:30:27.737-0300 I CONTROL  [initandlisten] db version v3.2.0
+2016-02-28T12:30:27.737-0300 I CONTROL  [initandlisten] git version: 45d947729a0315accb6d4f15a6b06be6d9c19fe7
+2016-02-28T12:30:27.737-0300 I CONTROL  [initandlisten] allocator: system
+2016-02-28T12:30:27.737-0300 I CONTROL  [initandlisten] modules: none
+2016-02-28T12:30:27.737-0300 I CONTROL  [initandlisten] build environment:
+2016-02-28T12:30:27.737-0300 I CONTROL  [initandlisten]     distarch: x86_64
+2016-02-28T12:30:27.737-0300 I CONTROL  [initandlisten]     target_arch: x86_64
+2016-02-28T12:30:27.737-0300 I CONTROL  [initandlisten] options: { net: { port: 27018 }, replication: { replSet: "replica_set" }, storage: { dbPath: "data/rs2" } }
+2016-02-28T12:30:27.738-0300 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=4G,session_max=20000,eviction=(threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2016-02-28T12:31:16.349-0300 I CONTROL  [initandlisten] 
+2016-02-28T12:31:16.349-0300 I CONTROL  [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000
+2016-02-28T12:31:52.657-0300 I REPL     [initandlisten] Did not find local voted for document at startup;  NoMatchingDocument Did not find replica set lastVote document in local.replset.election
+2016-02-28T12:31:52.657-0300 I REPL     [initandlisten] Did not find local replica set configuration document at startup;  NoMatchingDocument Did not find replica set configuration document in local.system.replset
+2016-02-28T12:31:52.657-0300 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2016-02-28T12:31:52.657-0300 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'data/rs2/diagnostic.data'
+2016-02-28T12:31:59.829-0300 I NETWORK  [initandlisten] waiting for connections on port 27018
+
+mongod --replSet replica_set --port 27019 --dbpath data/rs3
+2016-02-28T12:31:21.174-0300 I CONTROL  [initandlisten] MongoDB starting : pid=1871 port=27019 dbpath=data/rs3 64-bit host=MacBook-Pro-de-Lucas.local
+2016-02-28T12:31:21.175-0300 I CONTROL  [initandlisten] db version v3.2.0
+2016-02-28T12:31:21.175-0300 I CONTROL  [initandlisten] git version: 45d947729a0315accb6d4f15a6b06be6d9c19fe7
+2016-02-28T12:31:21.175-0300 I CONTROL  [initandlisten] allocator: system
+2016-02-28T12:31:21.175-0300 I CONTROL  [initandlisten] modules: none
+2016-02-28T12:31:21.175-0300 I CONTROL  [initandlisten] build environment:
+2016-02-28T12:31:21.175-0300 I CONTROL  [initandlisten]     distarch: x86_64
+2016-02-28T12:31:21.175-0300 I CONTROL  [initandlisten]     target_arch: x86_64
+2016-02-28T12:31:21.176-0300 I CONTROL  [initandlisten] options: { net: { port: 27019 }, replication: { replSet: "replica_set" }, storage: { dbPath: "data/rs3" } }
+2016-02-28T12:31:21.947-0300 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=4G,session_max=20000,eviction=(threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2016-02-28T12:32:01.877-0300 I CONTROL  [initandlisten] 
+2016-02-28T12:32:01.877-0300 I CONTROL  [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000
+2016-02-28T12:32:03.809-0300 I REPL     [initandlisten] Did not find local voted for document at startup;  NoMatchingDocument Did not find replica set lastVote document in local.replset.election
+2016-02-28T12:32:03.809-0300 I REPL     [initandlisten] Did not find local replica set configuration document at startup;  NoMatchingDocument Did not find replica set configuration document in local.system.replset
+2016-02-28T12:32:03.809-0300 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2016-02-28T12:32:03.809-0300 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'data/rs3/diagnostic.data'
+2016-02-28T12:32:04.338-0300 I NETWORK  [initandlisten] waiting for connections on port 27019
+```
+
+#### Configurando e Iniciando
+
+```
+rsconf = {
+   _id: "replica_set",
+   members: [
+    {
+     _id: 0,
+     host: "127.0.0.1:27017"
+    }
+  ]
+}
+rs.initiate(rsconf)
+
+//No rs1 apareceu o seguinte:
+
+2016-02-28T12:37:19.946-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:62316 #1 (1 connection now open)
+2016-02-28T12:37:25.819-0300 I REPL     [conn1] replSetInitiate admin command received from client
+2016-02-28T12:37:25.846-0300 I REPL     [conn1] replSetInitiate config object with 1 members parses ok
+2016-02-28T12:37:25.856-0300 I REPL     [conn1] ******
+2016-02-28T12:37:25.856-0300 I REPL     [conn1] creating replication oplog of size: 192MB...
+2016-02-28T12:37:26.508-0300 I STORAGE  [conn1] Starting WiredTigerRecordStoreThread local.oplog.rs
+2016-02-28T12:37:26.509-0300 I STORAGE  [conn1] The size storer reports that the oplog contains 0 records totaling to 0 bytes
+2016-02-28T12:37:26.509-0300 I STORAGE  [conn1] Scanning the oplog to determine where to place markers for truncation
+2016-02-28T12:37:27.961-0300 I REPL     [conn1] ******
+2016-02-28T12:37:29.203-0300 I REPL     [ReplicationExecutor] New replica set config in use: { _id: "replica_set", version: 1, protocolVersion: 1, members: [ { _id: 0, host: "127.0.0.1:27017", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, tags: {}, slaveDelay: 0, votes: 1 } ], settings: { chainingAllowed: true, heartbeatIntervalMillis: 2000, heartbeatTimeoutSecs: 10, electionTimeoutMillis: 10000, getLastErrorModes: {}, getLastErrorDefaults: { w: 1, wtimeout: 0 } } }
+2016-02-28T12:37:29.203-0300 I REPL     [ReplicationExecutor] This node is 127.0.0.1:27017 in the config
+2016-02-28T12:37:29.203-0300 I REPL     [ReplicationExecutor] transition to STARTUP2
+2016-02-28T12:37:29.203-0300 I REPL     [conn1] Starting replication applier threads
+2016-02-28T12:37:29.204-0300 I COMMAND  [conn1] command local.oplog.rs command: replSetInitiate { replSetInitiate: { _id: "replica_set", members: [ { _id: 0.0, host: "127.0.0.1:27017" } ] } } ntoreturn:1 ntoskip:0 keyUpdates:0 writeConflicts:0 numYields:0 reslen:22 locks:{ Global: { acquireCount: { r: 5, w: 3, W: 2 }, acquireWaitCount: { W: 1 }, timeAcquiringMicros: { W: 1690 } }, Database: { acquireCount: { w: 2, W: 1 } }, Metadata: { acquireCount: { w: 1 } }, oplog: { acquireCount: { w: 2 } } } protocol:op_command 3416ms
+2016-02-28T12:37:29.204-0300 I REPL     [ReplicationExecutor] transition to RECOVERING
+2016-02-28T12:37:29.226-0300 I REPL     [ReplicationExecutor] transition to SECONDARY
+2016-02-28T12:37:29.226-0300 I REPL     [ReplicationExecutor] conducting a dry run election to see if we could be elected
+2016-02-28T12:37:29.291-0300 I REPL     [ReplicationExecutor] dry election run succeeded, running for election
+2016-02-28T12:37:29.984-0300 I REPL     [ReplicationExecutor] election succeeded, assuming primary role in term 1
+2016-02-28T12:37:29.995-0300 I REPL     [ReplicationExecutor] transition to PRIMARY
+2016-02-28T12:37:30.231-0300 I REPL     [rsSync] transition to primary complete; database writes are now permitted
+```
+
+#### Adicionando Réplicas
+
+```
+rs.add("127.0.0.1:27018")
+{
+  "ok": 1
+}
+rs.add("127.0.0.1:27019")
+{
+  "ok": 1
+}
+```
+
+#### Status das Réplicas
+
+```
+rs.status()
+{
+  "set": "replica_set",
+  "date": ISODate("2016-02-28T15:39:44.261Z"),
+  "myState": 1,
+  "term": NumberLong("1"),
+  "heartbeatIntervalMillis": NumberLong("2000"),
+  "members": [
+    {
+      "_id": 0,
+      "name": "127.0.0.1:27017",
+      "health": 1,
+      "state": 1,
+      "stateStr": "PRIMARY",
+      "uptime": 580,
+      "optime": {
+        "ts": Timestamp(1456673948, 1),
+        "t": NumberLong("1")
+      },
+      "optimeDate": ISODate("2016-02-28T15:39:08Z"),
+      "electionTime": Timestamp(1456673849, 2),
+      "electionDate": ISODate("2016-02-28T15:37:29Z"),
+      "configVersion": 3,
+      "self": true
+    },
+    {
+      "_id": 1,
+      "name": "127.0.0.1:27018",
+      "health": 1,
+      "state": 2,
+      "stateStr": "SECONDARY",
+      "uptime": 47,
+      "optime": {
+        "ts": Timestamp(1456673948, 1),
+        "t": NumberLong("1")
+      },
+      "optimeDate": ISODate("2016-02-28T15:39:08Z"),
+      "lastHeartbeat": ISODate("2016-02-28T15:39:42.380Z"),
+      "lastHeartbeatRecv": ISODate("2016-02-28T15:39:43.379Z"),
+      "pingMs": NumberLong("0"),
+      "syncingTo": "127.0.0.1:27017",
+      "configVersion": 3
+    },
+    {
+      "_id": 2,
+      "name": "127.0.0.1:27019",
+      "health": 1,
+      "state": 2,
+      "stateStr": "SECONDARY",
+      "uptime": 35,
+      "optime": {
+        "ts": Timestamp(1456673948, 1),
+        "t": NumberLong("1")
+      },
+      "optimeDate": ISODate("2016-02-28T15:39:08Z"),
+      "lastHeartbeat": ISODate("2016-02-28T15:39:42.380Z"),
+      "lastHeartbeatRecv": ISODate("2016-02-28T15:39:39.438Z"),
+      "pingMs": NumberLong("0"),
+      "configVersion": 3
+    }
+  ],
+  "ok": 1
+}
+```
+
+
+
+
 
