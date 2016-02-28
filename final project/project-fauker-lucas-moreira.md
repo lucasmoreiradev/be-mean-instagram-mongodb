@@ -1427,3 +1427,70 @@ db.getUsers()
 #### 1 Config Server
 #### 3 Shardings
 #### 3 Replicas
+
+#### Criando o Config Server
+
+```
+mkdir data/configdb
+mongod --configsvr --port 27010
+```
+
+#### Criando o Router
+
+```
+mongos --configdb localhost:27010 --port 27011
+```
+
+#### Criando os Shards
+
+```
+mkdir /data/shard1 && mkdir /data/shard2 && mkdir /data/shard3
+
+mongod --port 27012 --dbpath /data/shard1
+mongod --port 27013 --dbpath /data/shard2
+mongod --port 27014 --dbpath /data/shard3
+```
+
+#### Registrando os Shards no Router
+
+```
+MacBook-Pro-de-Lucas:data lucasmoreira$ mongo --port 27011 --host localhost
+MongoDB shell version: 3.2.0
+connecting to: localhost:27011/test
+Mongo-Hacker 0.0.9
+MacBook-Pro-de-Lucas(mongos-3.2.0)[mongos] test> sh.addShard("localhost:27012")
+{
+  "shardAdded": "shard0000",
+  "ok": 1
+}
+MacBook-Pro-de-Lucas(mongos-3.2.0)[mongos] test> sh.addShard("localhost:27013")
+{
+  "shardAdded": "shard0001",
+  "ok": 1
+}
+MacBook-Pro-de-Lucas(mongos-3.2.0)[mongos] test> sh.addShard("localhost:27014")
+{
+  "shardAdded": "shard0002",
+  "ok": 1
+}
+```
+
+Especificamos qual database iremos shardear:
+
+```
+sh.enableSharding("be-mean")
+{
+  "ok": 1
+}
+```
+
+E depois especificamos qual coleção dessa database será shardeada com sh.shardCollection:
+
+```
+sh.shardCollection("be-mean.notas", {"_id" : 1})
+{
+  "collectionsharded": "be-mean.notas",
+  "ok": 1
+}
+```
+
