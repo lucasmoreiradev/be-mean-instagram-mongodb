@@ -1,7 +1,7 @@
 # MongoDb - Projeto Final
 **Autor:** Lucas da Silva Moreira
 
-**Data** Date.now() //em timestamp
+**Data**: 1456674804092
 
 ## Para qual sistema você usaria o MogoDB (diferente desse)?
 - Chat
